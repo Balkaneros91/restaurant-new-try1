@@ -30,7 +30,7 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Menu</a>
+                        <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -85,10 +85,7 @@
         <!-- Content Goes here -->
         {% endblock content %}
     </main>
-
-    <main>
-        <h1 style="height: 150vh">Main Content comes here !!!</h1>
-    </main>
+    
 
     <!-- Footer -->
     <footer class="bg-dark text-white footer mt-auto py-3 dark-bg">
