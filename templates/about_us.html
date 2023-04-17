@@ -1,16 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1>About {{ about_us.restaurant_name }}</h1>
-        <p>{{ about_us.description }}</p>
-        <!-- Add more information here as needed -->
-      </div>
-      <div class="col-md-6">
-        <!-- Add an image or other content here if desired -->
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>About {{ about_us.restaurant_name }}</h1>
+      <p>{{ about_us.description }}</p>
+      <!-- Add more information here as needed -->
+    </div>
+    <div class="col-md-6">
+      <!-- Add an image or other content here if desired -->
     </div>
   </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Contacts Us at {{ about_us.restaurant_name }}</h1>
+      <p>{{ about_us.description }}</p>
+      <!-- Add more information here as needed -->
+    </div>
+    <div class="col-md-6">
+      <!-- Add an image or other content here if desired -->
+    </div>
+  </div>
+</div>
 {% endblock %}
