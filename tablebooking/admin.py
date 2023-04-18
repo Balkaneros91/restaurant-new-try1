@@ -9,8 +9,8 @@ from .models import Reservation, Booking, Table
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('customer', 'table', 'date', 'time')
-    list_filter = ('date', 'time')
+    list_display = ('customer', 'table_name', 'table_capacity', 'date', 'time')
+    list_filter = ('date', 'time', 'table__name')
     search_fields = ('customer__username', 'table__name')
     date_hierarchy = 'date'
     ordering = ('date', 'time')
@@ -21,6 +21,12 @@ class ReservationAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return qs.filter(customer=request.user)
+
+    def table_name(self, obj):
+        return obj.table.name
+
+    def table_capacity(self, obj):
+        return obj.table.capacity
 
     def save_model(self, request, obj, form, change):
         # Override default save method to automatically set the customer field to the current user

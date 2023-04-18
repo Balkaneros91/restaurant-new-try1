@@ -1,11 +1,11 @@
+view.py: 
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.utils import timezone
 from django.utils.html import strip_tags
-from datetime import timedelta
 
 from .models import Table, Reservation, Booking
 from .forms import BookingForm
@@ -13,56 +13,19 @@ from .forms import BookingForm
 
 def index(request):
     tables = Table.objects.all()
-    context = {
-        'tables': tables,
-        'opening_times': [table.opening_time for table in tables],
-        'closing_times': [table.closing_time for table in tables],
-    }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'tables': tables})
 
 
-# @login_required
+@login_required
 def create_booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            table = booking.table
-
-            # Check if reservation time is within opening and closing times
-            now = timezone.now()
-            if not (table.opening_time <= booking.reservation_time <= table.closing_time):
-                messages.error(request, f"Reservation time should be between {table.opening_time.strftime('%H:%M')} and {table.closing_time.strftime('%H:%M')}.")
-                return render(request, 'booking_form.html', {'form': form})
-
-            # Check if reservation time is at least 2 hours after the current time
-            if booking.reservation_time < now + timedelta(hours=2):
-                messages.error(request, "Reservation time should be at least 2 hours from now.")
-                return render(request, 'booking_form.html', {'form': form})
-
-            # Check if reservation time is at least 2 hours before closing time
-            if booking.reservation_time > table.closing_time - timedelta(hours=2):
-                messages.error(request, f"Reservation time should be at least 2 hours before the closing time ({table.closing_time.strftime('%H:%M')}).")
-                return render(request, 'booking_form.html', {'form': form})
-
-            # Check if there is already a booking for the same table at the same time
-            if Booking.objects.filter(table=table, reservation_time=booking.reservation_time).exists():
-                messages.error(request, "This table is already booked at the selected time.")
-                return render(request, 'booking_form.html', {'form': form})
-
-            # if request.user.is_authenticated:
-            #     booking.customer_name = request.user.username
-            #     email = request.user.email
-            # else:
-            #     booking.customer_name = 'Anonymous'
-            #     email = form.cleaned_data['email']
-
             booking.customer_name = request.user.username
             booking.save()
             messages.success(request, 'Booking created successfully.')
-
-            email = request.user.email if request.user.is_authenticated else form.cleaned_data['email']
-            # send_confirmation_email(email, 'created', booking)
+            send_confirmation_email(request.user.email, 'created', booking)
             return redirect('booking_list')
     else:
         form = BookingForm()
@@ -110,3 +73,28 @@ def send_confirmation_email(email, action, booking):
     plain_message = strip_tags(html_message)
     from_email = 'noreply@example.com'
     send_mail(subject, plain_message, from_email, [email], html_message=html_message)
+
+
+
+
+
+
+forms.py: 
+
+
+from django import forms
+from .models import Table, Reservation
+
+
+class ReservationForm(forms.ModelForm):
+    table = forms.ModelChoiceField(queryset=Table.objects.all(), empty_label=None)
+    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
+
+    class Meta:
+        model = Reservation
+        fields = ('table', 'date', 'time', 'special_requests')
+        widgets = {
+            'special_requests': forms.Textarea(attrs={'rows': 4})
+        }
+
