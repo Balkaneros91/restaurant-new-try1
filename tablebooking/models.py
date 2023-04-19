@@ -1,56 +1,41 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-import datetime
-
-
-class Table(models.Model):
-    now = datetime.datetime.now()
-    name = models.CharField(max_length=50, default='')
-    capacity = models.IntegerField()
-    opening_time = models.TimeField(default=datetime.time(11, 0))
-    closing_time = models.TimeField(default=datetime.time(20, 0))
-
-    def __str__(self):
-        return f'Table {self.name} ({self.capacity} seats)'
-
-    def is_available(self, date, time):
-        reservations = Reservation.objects.filter(table=self, date=date, time__gte=time, time__lt=(time + datetime.timedelta(hours=2)))
-        if reservations.exists():
-            return False
-        return time >= self.opening_time and (time + datetime.timedelta(hours=2)) <= self.closing_time and (time + datetime.timedelta(hours=2)) <= (self.closing_time - datetime.timedelta(hours=2))
+# from django.contrib.auth.models import User
+# from django.utils import timezone
 
 
-class Reservation(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    date = models.DateField()
-    time = models.TimeField()
-    special_requests = models.TextField(null=True, blank=True)
+# class Table(models.Model):
 
-    def __str__(self):
-        return f"{self.customer} reserved Table {self.table} on {self.date} at {self.time}"
+#     name = models.CharField(max_length=100)
+#     capacity = models.IntegerField()
+#     is_available = models.BooleanField(default=True)
 
-    class Meta:
-        unique_together = ('table', 'date', 'time')
+#     def __str__(self):
+#         return f'Table {self.name} ({self.capacity} seats)'
+
+
+# class Customer(models.Model):
+#     first_name = models.CharField(max_length=100)
+#     last_name = models.CharField(max_length=100)
+#     email = models.EmailField()
 
 
 class Booking(models.Model):
-    customer_name = models.CharField(max_length=100)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    # customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    # table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    # date = models.DateField()
+    # time = models.TimeField()
+    # party_size = models.IntegerField()
+    # created_at = models.DateTimeField(default=timezone.now)
+    # special_requests = models.TextField(null=True, blank=True)
+
+    name = models.CharField(max_length=50, null=False, blank=True)
+    email = models.EmailField(default='')
+    phone = models.CharField(max_length=30, null=False, blank=True)
+    # number_of_p = models.IntegerField()
+    number_of_p = models.PositiveIntegerField(default=1)
     date = models.DateField()
     time = models.TimeField()
-    number_of_people = models.IntegerField(default=1)
-    special_requests = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.customer_name} at {self.table} on {self.date} at {self.time}"
-
-
-# class Booking(models.Model):
-#     customer_name = models.CharField(max_length=255)
-#     date = models.DateField()
-#     start_time = models.TimeField()
-#     end_time = models.TimeField()
-#     table = models.ForeignKey(Table, on_delete=models.CASCADE)
-#     number_of_people = models.IntegerField()
+        return self.name
+        # return f"{self.customer} at {self.table} on {self.date} at {self.time}"
