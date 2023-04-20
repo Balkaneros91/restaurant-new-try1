@@ -176,16 +176,18 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # # FYI - for contact form 'models.py' is not needed we just want to send this not save it in the database !!! create 'forms.py' and 'urls.py'
 
 
-
-
-
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # this is while in development it needs to be chnaged to Gmail once deploy !!!
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'testing@example.com'
+
 # EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+
+# EMAIL_PORT = 587 / 1025
+# EMAIL_USE_TLS = True / False
 # EMAIL_HOST_USER = 'your-gmail-username@gmail.com'
 # EMAIL_HOST_PASSWORD = 'your-gmail-password'
 
+# -------------------------------------------------------------------------
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = '<your_email_host>'
@@ -195,6 +197,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # EMAIL_HOST_PASSWORD = '<your_email_password>'
 
 
+# -------------------------------------------------------------------------
 # env.py:
 
 # import os
@@ -210,18 +213,47 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 
-
-
-
 # # Make sure to replace EMAIL_HOST_USER and EMAIL_HOST_PASSWORD with your own Gmail username and password respectively. You may also need to enable "Less secure app access" for your Gmail account, as Django uses SMTP authentication to send email.
 
 # # Once you have configured your email settings, you can use Django's built-in send_mail function to send the confirmation email to the customer. Here's an example of how you can modify your BookingCreate view to send the confirmation email:
 
 
+# from django.shortcuts import render, redirect
+# from django.core.mail import send_mail, BadHeaderError
+# from django.http import HttpResponse, HttpResponseRedirect
+# from .forms import ContactForm
+
+# # views.py:
+# def send_email(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             name = form.clean_data['name']
+#             phone = form.clean_data['phone']
+#             from_email = form.clean_data['from_email']
+#             message = form.clean_data['message']
+
+#             try:
+#                 send_mail(name, phone, message, from_email, ['admin@example.com'])
+
+#             except BadHeaderError:
+#                 return HttpResponse('invalid header')
+
+#             return redirect('contact:send_success')  # contact is from the main url, the 'namespace' added to urls
+
+#     else:
+#         form = ContactForm()
+
+#     context = {
+#         'form': form
+#     }
+
+#     return render(request, 'contact.html', context)
 
 
+# def send_success(request):
+#     return HttpResponse('Thank you for your email ^_^ :D xD')
 
-# from django.core.mail import send_mail
 
 # class BookingCreate(LoginRequiredMixin, CreateView):
 #     # ...
@@ -239,3 +271,32 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 #         )
 
 #         return super().form_valid(form)
+
+
+
+# Additionally, there are several third-party packages available for Django that provide additional functionality for working with templates. For example, the django-crispy-forms package allows developers to easily create and customize forms using pre-built templates, while the django-bootstrap4 package provides a set of Bootstrap 4 templates and tools for use in Django projects.
+
+
+## Django search q = complex lookups
+# from django.db.models import Q
+
+# add it in 'views.py'
+## search
+# search_query = request.GET.get('q')   This q need to be in our HTML as "name='q'" placed by classes and rest
+# if search_query:
+#     post_list = post_list.filter(
+#         Q(title__icontains = query)   # only one = sign and the query is actually search_query
+#         Q(content__icontains = query)
+#         Q(tag__name__icontains = query)
+#     ).DISTINCT().  ## REMOVES DUPLICATES
+# HTML search-form needs to have a METHOD= GET, and a "value={{request.GET.q}}"
+
+
+
+## pip3 install django-bootstrap4   or CRISPY
+## SummerNote
+
+## Admin page changes
+# admin.site.site_header = 'Restaurant AdminPanel'
+# admin.site.site_title = 'Restaurant App Admin'
+# admin.site.site_index_title = 'Welcome to Restaurant Admin Panel'
