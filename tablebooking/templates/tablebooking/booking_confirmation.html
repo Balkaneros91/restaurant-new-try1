@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+<!-- {% load static %} -->
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- booking.html -->
+
+<div class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-3">Booking Confirmation</h2>
+
+                <p>Thank you for your booking! Here are the details:</p>
+
+                <p>Name: {{ booking.name }}</p>
+                <p>Email: {{ booking.email }}</p>
+                <p>Phone: {{ booking.phone }}</p>
+                <p>Number of people: {{ booking.number_of_p }}</p>
+                <p>Date: {{ booking.date }}</p>
+                <p>Time: {{ booking.time }}</p>
+
+                <p>
+                    <a href="{% url 'edit_booking' booking.id %}">Edit Booking</a>
+                    <a href="{% url 'delete_booking' booking.id %}">Delete Booking</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

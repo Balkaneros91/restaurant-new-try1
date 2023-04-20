@@ -43,6 +43,9 @@
     </style>
   </head>
   <body>
+
+
+
     <h1>Booking Confirmation</h1>
     <p>Hi {{ booking.customer_name }},</p>
     <p>Your booking has been {{ action }}:</p>
@@ -56,5 +59,8 @@
     <p>If you need to update or cancel your booking, please <a href="{% url 'booking_list' %}">click here</a> to manage your bookings.</p>
     <p>Thanks for choosing our restaurant!</p>
     <img src="{% static 'img/logo.png' %}" alt="Restaurant Logo" width="100">
+
+
+    
   </body>
 </html>

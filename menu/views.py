@@ -5,7 +5,7 @@ from .models import Category, MenuItem
 
 class MenuListView(ListView):
     model = MenuItem
-    template_name = 'menu.html'
+    template_name = 'menu/menu.html'
     context_object_name = 'menu_items'
 
     def get_context_data(self, **kwargs):

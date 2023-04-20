@@ -7,4 +7,4 @@ def contacts(request):
     context = {
         'contacts': contacts
     }
-    return render(request, 'contacts.html', context)
+    return render(request, 'contacts/contacts.html', context)

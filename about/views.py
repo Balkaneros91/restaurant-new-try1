@@ -7,4 +7,4 @@ def about_us(request):
     context = {
         'about_us': about_us
     }
-    return render(request, 'about_us.html', context)
+    return render(request, 'about/about_us.html', context)
