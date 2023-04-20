@@ -165,3 +165,77 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+# ---------------------------------
+
+# settings.py:
+
+# # Yes, in order to send emails from your Django application, you will need to configure email settings in your project's settings file settings.py. Here's an example of how you can configure email settings using Gmail SMTP:
+
+# # FYI - for contact form 'models.py' is not needed we just want to send this not save it in the database !!! create 'forms.py' and 'urls.py'
+
+
+
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # this is while in development it needs to be chnaged to Gmail once deploy !!!
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-gmail-username@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your-gmail-password'
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = '<your_email_host>'
+# EMAIL_PORT = <your_email_port>
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = '<your_email_address>'
+# EMAIL_HOST_PASSWORD = '<your_email_password>'
+
+
+# env.py:
+
+# import os
+
+# os.environ.setdefault('EMAIL_HOST', '<your_email_host>')
+# os.environ.setdefault('EMAIL_PORT', '<your_email_port>')
+# os.environ.setdefault('EMAIL_HOST_USER', '<your_email_address>')
+# os.environ.setdefault('EMAIL_HOST_PASSWORD', '<your_email_password>')
+
+# EMAIL_HOST = os.environ.get('EMAIL_HOST')
+# EMAIL_PORT = os.environ.get('EMAIL_PORT')
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+
+
+
+
+# # Make sure to replace EMAIL_HOST_USER and EMAIL_HOST_PASSWORD with your own Gmail username and password respectively. You may also need to enable "Less secure app access" for your Gmail account, as Django uses SMTP authentication to send email.
+
+# # Once you have configured your email settings, you can use Django's built-in send_mail function to send the confirmation email to the customer. Here's an example of how you can modify your BookingCreate view to send the confirmation email:
+
+
+
+
+
+# from django.core.mail import send_mail
+
+# class BookingCreate(LoginRequiredMixin, CreateView):
+#     # ...
+
+#     def form_valid(self, form):
+#         # ...
+
+#         # Send confirmation email to the customer
+#         send_mail(
+#             'Booking Confirmation',
+#             f'Thank you for booking a table at our restaurant. Your booking details are:\n\nTable: {table}\nDate: {date}\nTime: {time}\nNumber of people: {number_of_people}\n\nWe look forward to seeing you!',
+#             'from@example.com',
+#             [form.instance.customer_email],
+#             fail_silently=False,
+#         )
+
+#         return super().form_valid(form)
