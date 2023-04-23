@@ -45,4 +45,86 @@
 </div>
 
 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2 class="text-center">Menu List with Price</h2>
+
+      <!-- Category links -->
+      <ul class="nav justify-content-center">
+        {% for category in categories %}
+        <li class="nav-item">
+          <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category.name }}" role="tab"
+            aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- <ul class="nav" role="tablist">
+        {% for category in categories %}
+        <li class="nav-item">
+          <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category }}" role="tab"
+            aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+      </ul> -->
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="pills-tabContent">
+        {% for category in categories %}
+        <div class="tab-pane fade show" id="{{ category.name }}" role="tabpanel"
+          aria-labelledby="{{category.name }}-tab">
+          {% for meal in menu_items %}
+          {% if meal.category == category %}
+          <div class="d-flex">
+            <div class="mb-3">
+              <h3>{{meal.name}}</h3>
+              <p>{{meal.description|truncatewords:20}}</p>
+            </div>
+            <div>
+              <strong>SEK {{meal.price}}</strong>
+            </div>
+          </div> <!-- .menu-food-item -->
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        {% for category in categories %}
+        <div class="tab-pane fade" id="{{ category.name }}" role="tabpanel" aria-labelledby="{{ category.name }}-tab">
+          {% for item in category.menuitem_set.all %}
+          <div class="row my-3">
+            <div class="col-md-8">
+              <h4>{{ item.name }}</h4>
+              <p>{{ item.description }}</p>
+            </div>
+            <div class="col-md-4">
+              <h4>${{ item.price }}</h4>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
 {% endblock %}
