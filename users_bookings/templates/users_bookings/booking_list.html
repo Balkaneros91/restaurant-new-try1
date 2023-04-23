@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>My Bookings</h1>
+
+    {% if bookings %}
+    <ul>
+      {% for booking in bookings %}
+      <li>
+        {{ booking.name }} for {{ booking.number_of_guests }} people on {{ booking.date }} at {{ booking.reservation_time }} contact: ({{booking.phone}}) -
+        <a href="{% url 'booking_list' %}">View</a> |
+        <!-- <a href="{% url 'booking_edit' booking.pk %}">Edit</a> | -->
+        <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
+        <!-- <a href="{% url 'booking_delete' booking.pk %}">Delete</a> -->
+        <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>You haven't made any bookings yet.</p>
+    {% endif %}
+    {% endblock %}
+
+
+
+    {% comment %}
+    <h1>My Bookings</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Number of Guests</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in bookings %}
+        <tr>
+          <td>{{ booking.date }}</td>
+          <td>{{ booking.time }}</td>
+          <td>{{ booking.num_guests }}</td>
+          <td>{{ booking.status }}</td>
+          <td>
+            <a href="{% url 'booking_edit' booking.id %}">Edit</a>
+            <a href="{% url 'booking_delete' booking.id %}">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="5">You have no bookings yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endcomment %}

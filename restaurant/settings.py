@@ -54,10 +54,13 @@ INSTALLED_APPS = [
 
     'crispy_forms',
 
+    'django.contrib.postgres',
+
     'home',
     'menu',
     'about',
-    'tablebooking',
+    'table_booking',
+    'users_bookings',
     'contacts',
 ]
 
@@ -137,7 +140,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Stockholm'
 
 USE_I18N = True
 

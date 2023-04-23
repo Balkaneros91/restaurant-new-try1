@@ -22,11 +22,12 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path('', include('home.urls')),
     path('about/', include('about.urls')),
     path('menu/', include('menu.urls')),
-    path('booking/', include('tablebooking.urls')),
+    path('bookings/', include('table_booking.urls')),
+    path('my-booking/', include('users_bookings.urls')),
     path('contacts/', include('contacts.urls')),
-    path('', include('home.urls')),
 
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
