@@ -12,3 +12,11 @@ class MenuListView(ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+
+def meal_details(request, slug):
+    meal_details = MenuItem.objects.get(slug=slug)
+
+    context = {'meal_details': meal_details}
+
+    return render(request, 'menu/meal_details.html', context)

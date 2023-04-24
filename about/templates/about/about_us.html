@@ -3,19 +3,45 @@
 {% load static %}
 
 {% block content %}
+
+
+<!-- Cover -->
+<div class="cover_1 cover_sm">
+  <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7" data-aos="fade-up">
+          <h2 class="heading">About Us</h2>
+          <p class="lead">Shortly about us, about our concep and legacy brought back from motherland.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h1>About {{ about_us.restaurant_name }}</h1>
+  <div class="row justify-content-center m-4 pb-2 border">
+    <div class="col text-center m-4">
+      <h2>About {{ about_us.restaurant_name }}</h2>
       <p>{{ about_us.description }}</p>
-      <!-- Add more information here as needed -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <!-- Add an image or other content here if desired -->
     </div>
   </div>
 </div>
+<br>
+
+<div class="container">
+  <div class="row justify-content-center m-4 border">
+    <h3 class="text-center mb-5">Things we offer</h3>
+    {% for things in things_we_offer %}
+    <div class="col-md-6 text-center m-2">
+      <h5>{{ things.title }}</h5>
+      <p>{{ things.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
 </div>
+
+
 {% endblock %}

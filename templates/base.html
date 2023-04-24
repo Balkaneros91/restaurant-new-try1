@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,13 @@
     <title>My Restaurant</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Required Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        integrity="sha384-M5y5l0jUOwbxU6+tOleJO5lZBJj/1DwzTPf3QUG/3zqquXPhvJaegtbx1nHkESl6" crossorigin="anonymous">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'site_static/css/style.css' %}">
+
 </head>
 
 
@@ -17,15 +25,19 @@
     <!-- Nav-bar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="{% url 'home' %}">Cubañeros</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about_us' %}">About</a>
@@ -34,6 +46,7 @@
                         <a class="nav-link" href="{% url 'menu' %}">Menu</a>
                     </li>
                 </ul>
+
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'book_a_table' %}">Book a Table</a>
@@ -76,37 +89,11 @@
         </div>
     </div>
 
-    <!-- Main -->
-
-    <!-- <section class="bg-image d-flex align-items-center py-5"
-        style="background-image: url('https://picsum.photos/1000/400'); height:400px;"> -->
-
-        <!-- {% load cloudinary %} -->
-        <!-- <img src="{% cloudinary "sample.jpg" %}" alt="Sample Image"> -->
-        <!-- <img src="{% cloudinary 'cozy_restaurant.webp' width=500 crop='scale' %}" alt="Restaurant image"> -->
-<!-- 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">"Your Cubañeros quotation here"</p>
-                        <br>
-                        <footer class="blockquote-footer">Author of the quotation: Cubañeros</footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
 
     <!-- Define the main content of the page -->
-    <main class="flex-shrink-0 main-bg container mt-4">
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-    </main>
-
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
 
 
     <!-- Footer -->
@@ -115,7 +102,6 @@
             <div class="row">
                 <div class="col-12">
                     <section id="map-wrapper">
-                        <!-- <iframe id="map" src="https://bit.ly/2QVfkiy" width="100%" height="200"></iframe> -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.5110645199804!2d18.067983777056337!3d59.32442101141368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77e2f59fd599%3A0xd65a76a8a13271cb!2sSkomakargatan%2030%2C%20111%2029%20Stockholm!5e0!3m2!1sen!2sse!4v1681831361960!5m2!1sen!2sse"
                             width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
@@ -149,6 +135,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+    <!-- Required Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pA6w/Ki6b3y3qNl+zv15TlT2QDXOYL7q3sRHfze/7W99sOeN1xDYz4X4v0GmMSmF" crossorigin="anonymous">
     </script>
 
     <!-- font awesome script -->

@@ -20,7 +20,7 @@ class MenuItem(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.TextField(max_length=400)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    image = models.ImageField(default='', upload_to='menu/')
+    image = models.ImageField(blank=True, null=False, upload_to='menu/')
     slug = models.SlugField(max_length=100, unique=True)
 
     def save(self, *args, **kwargs):

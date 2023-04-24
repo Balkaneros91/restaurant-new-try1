@@ -1,19 +1,38 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Contact Details: </h1>
-      <p><strong>Name:  </strong>{{ contacts.name }}</p>
-      <p><strong>Email: </strong>{{ contacts.email }}</p>
-      <p><strong>Phone number:  </strong>{{ contacts.phone_number }}</p>
-      <p><strong>Address: </strong>{{ contacts.address }}</p>
-      <!-- Add more information here as needed -->
+
+
+<div class="cover_1 cover_sm">
+  <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7" data-aos="fade-up">
+          <h2 class="heading">Contact information</h2>
+          <p class="lead">In case of any further questions please call or email us!</p>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <!-- Add an image or other content here if desired -->
+  </div>
+</div> <!-- .cover_1 -->
+
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center m-5" data-aos="fade-up">
+      <div class="col-md-6 text-right">
+        <h1 class="pb-3">Contact Details: </h1>
+        <p><strong>Name: </strong>{{ contacts.name }}</p>
+        <p><strong>Email: </strong>{{ contacts.email }}</p>
+        <p><strong>Phone number: </strong>{{ contacts.phone_number }}</p>
+        <p><strong>Address: </strong>{{ contacts.address }}</p>
+      </div>
     </div>
   </div>
 </div>
+
+
 {% endblock %}

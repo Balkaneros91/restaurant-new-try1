@@ -1,57 +1,65 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<h1>My Bookings</h1>
 
-    {% if bookings %}
-    <ul>
-      {% for booking in bookings %}
-      <li>
-        {{ booking.name }} for {{ booking.number_of_guests }} people on {{ booking.date }} at {{ booking.reservation_time }} contact: ({{booking.phone}}) -
-        <a href="{% url 'booking_list' %}">View</a> |
-        <!-- <a href="{% url 'booking_edit' booking.pk %}">Edit</a> | -->
-        <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
-        <!-- <a href="{% url 'booking_delete' booking.pk %}">Delete</a> -->
-        <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <p>You haven't made any bookings yet.</p>
-    {% endif %}
-    {% endblock %}
+<div class="cover_1 cover_sm">
+  <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7" data-aos="fade-up">
+          <h2 class="heading">Your bookings</h2>
+          <p class="lead">In case you have to update or cancel your booking with us!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- .cover_1 -->
 
 
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 p-5">
+        <h1>My Bookings</h1>
 
-    {% comment %}
-    <h1>My Bookings</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Number of Guests</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for booking in bookings %}
-        <tr>
-          <td>{{ booking.date }}</td>
-          <td>{{ booking.time }}</td>
-          <td>{{ booking.num_guests }}</td>
-          <td>{{ booking.status }}</td>
-          <td>
-            <a href="{% url 'booking_edit' booking.id %}">Edit</a>
-            <a href="{% url 'booking_delete' booking.id %}">Delete</a>
-          </td>
-        </tr>
-        {% empty %}
-        <tr>
-          <td colspan="5">You have no bookings yet.</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endcomment %}
+        {% if bookings %}
+        <table>
+          <thead>
+            <tr>
+              <th>Nr. of Guests</th>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr>
+              <td>{{ booking.number_of_guests }} pers.</td>
+              <td>{{ booking.name }}</td>
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.reservation_time }}</td>
+              <td>{{ booking.phone }}</td>
+              <td>
+                <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
+                <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>You haven't made any bookings yet.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
