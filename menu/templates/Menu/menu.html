@@ -40,13 +40,14 @@
                     <div class="col">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">{{ item.name }}</h5>
-                                <p class="card-text">{{ item.description }}</p>
-                                <!-- <p class="card-text">{{ item.description|truncatewords:10 }}</p> -->
+                                <h5 class="card-title"><a
+                                        href="{% url 'menu:meal_details' item.slug %}">{{ item.name }}</a></h5>
+                                <!-- <p class="card-text">{{ item.description }}</p> -->
+                                <p class="card-text">{{ item.description|truncatewords:10 }}</p>
 
-                                <!-- {% if item.description|wordcount > 10 %}
-                                <a href="#{{ item.description}}" class="card-link">Read more</a>
-                                {% endif %} -->
+                                {% if item.description|wordcount > 10 %}
+                                <a href="{% url 'menu:meal_details' item.slug %}" class="card-link">Read more</a>
+                                {% endif %}
 
                                 <p class="card-text font-weight-bold">${{ item.price }}</p>
                             </div>
@@ -62,3 +63,8 @@
 </div>
 
 {% endblock %}
+
+
+              <!-- <h3><a href="{% url 'meal_details' meal.meal_slug_attr %}">{{meal.name}}</a></h3> -->
+
+              <!-- <h3>{{ meal.name }}</h3> -->

@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block body %}
+{% block content %}
 
 
 <!-- Cover -->
@@ -21,19 +21,40 @@
 </div>
 
 
-<div class="section">
+<!-- <div class="section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8" data-aos="fade-up">
 
-        <!-- <img class="meal_img" src="{{meal_detail.image.url}}" alt=""> -->
         <h2>{{ meal_details.name }}</h2>
         <p>{{ meal_details.description }}</p>
         <p>Price: {{ meal_details.price }}$ </p>
+        <img class="meal_img" src="{{ meal_details.image.url }}" alt="">
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col" data-aos="fade-up">
+
+        <div class="card" style="width: 30rem;">
+          <img src="{{ meal_details.image.url }}" class="card-img-top" alt="#">
+          <div class="card-body">
+            <h5 class="card-title">{{ meal_details.name }}</h5>
+            <p class="card-text">{{ meal_details.description }}</p>
+            <p class="card-text">{{ meal_details.price }}</p>
+            <button type="button" class="btn btn-primary" onclick="window.history.back();">Back to Menu</button>
+          </div>
+        </div>
 
       </div>
     </div>
   </div>
 </div>
 
-{% endblock body %}
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -17,11 +18,12 @@ class Category(models.Model):
 
 class MenuItem(models.Model):
     name = models.CharField(max_length=250)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     description = models.TextField(max_length=400)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    image = models.ImageField(blank=True, null=False, upload_to='menu/')
-    slug = models.SlugField(max_length=100, unique=True)
+    # image = models.ImageField(blank=True, null=False, upload_to='menu/')
+    image = CloudinaryField('image', default='placeholder')
+    slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug and self.name:
