@@ -33,71 +33,53 @@
 
 <hr>
 
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+        <h2 class="text-center">Menu List with Price</h2>
 
-      <h2 class="text-center">Menu List with Price</h2>
+        <!-- Category links -->
+        <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
+          {% for category in categories %}
+          <li class="nav-item">
+            <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category.name }}" role="tab"
+              aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
 
-      <!-- Better version Category links -->
+        <!-- Tab links -->
+        <div class="tab-content" id="pills-tabContent">
+          {% for category in categories %}
+          <div class="tab-pane fade show" id="{{ category.name }}" role="tabpanel"
+            aria-labelledby="{{ category.name }}-tab">
 
-      <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
-        {% for category in categories %}
-        <li class="nav-item">
-          <a class="nav-link " id="{{ category }}-tab" data-toggle="pill" href="#{{ category }}" role="tab"
-            aria-controls="{{ category }}" aria-selected="true">{{ category }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-
-
-      <!-- <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
-        {% for category in categories %}
-        <li class="nav-item">
-          <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category.name }}" role="tab"
-            aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
-        </li>
-        {% endfor %}
-      </ul> -->
-
-
-      <div class="tab-content" id="pills-tabContent">
-        {% for category in categories %}
-        <div class="tab-pane fade show" id="{{ category.name }}" role="tabpanel"
-          aria-labelledby="{{ category.name }}-tab">
-          {% for meal in category.meal_set.all %}
-          <!-- original -->
-
-          {% if meal.category == category %}
-
-          <div class="d-block d-md-flex">
-            <div class="mb-3">
-              <h3><a href="{% url 'menu:meal_details' meal.slug %}">{{ meal.name }}</a></h3>
-              <p>{{ meal.description|truncatewords:20 }}</p>
+            {% for meal in category.menuitem_set.all %}
+            {% if meal.category == category %}
+            <div class="d-block d-md-flex menu-food-item">
+              <div class="text order-1 mb-3">
+                <h3><a href="{% url 'menu:meal_details' meal.slug %}">{{ meal.name }}</a></h3>
+                <p>{{ meal.description|truncatewords:20 }}</p>
+              </div>
+              <div class="price order-2">
+                <strong>SEK {{ meal.price }}</strong>
+              </div>
             </div>
-            <div>
-              <strong>SEK {{ meal.price }}</strong>
-            </div>
+            {% endif %}
+            {% empty %}
+            <p>No meals found for this category.</p>
+            {% endfor %}
           </div>
-
-          {% endif %}
-
-          {% empty %}
-          <p>No meals found for this category.</p>
-
           {% endfor %}
         </div>
-        {% endfor %}
       </div>
-
     </div>
   </div>
 </div>
 
-
 <hr>
-
 
 <div class="section">
   <div class="container">
@@ -112,27 +94,6 @@
     </div>
   </div>
 </div>
-
-
-<hr>
-
-
-<div class="section pt-0 pb-0">
-  <div class="menus d-flex bg-light">
-    {% for meal in meals %}
-
-    <div class="d-flex item">
-      <div class="text">
-        <h3>{{meal.name}}</h3>
-        <p>{{meal.description|truncatewords:15}}</p>
-        <p class="price">${{meal.price}}</p>
-      </div>
-    </div>
-
-    {% endfor %}
-  </div>
-</div> <!-- .section -->
-
 
 
 <script>

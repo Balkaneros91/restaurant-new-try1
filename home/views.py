@@ -21,7 +21,7 @@ def home_view(request):
         'meal_list': meal_list,
         'about_us': about_us,
         'contacts': contacts,
-        'meal_slug_attr': 'slug',
+        # 'meal_slug_attr': 'slug',
     }
 
     return render(request, 'home/index.html', context)
