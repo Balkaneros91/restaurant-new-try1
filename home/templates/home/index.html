@@ -4,14 +4,14 @@
 
 
 <!-- Cover -->
-<div class="cover_1 cover_sm">
+<div class="cover_img">
   <div class="img_bg" style="background-image: url({% static 'site_static/img/slider-1.jpg' %})"
     data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row align-items-center justify-content-center">
-        <div class="col-md-8" data-aos="fade-up">
+        <div class="col-md-8">
           <h2 class="heading">Bienvenidos a 'Cubaneros'</h2>
-          <p class="lead">Welcome to the real Cuban experience!</p>
+          <p class="sub-heading">Welcome to the real Cuban experience!</p>
         </div>
       </div>
     </div>
@@ -19,61 +19,56 @@
 </div>
 
 
-<div class="section">
-  <div class="container">
-    <div class="row justify-content-center mb-2" data-aos="fade-up">
-      <div class="col text-center m-4">
-        <h2>About {{ about_us.restaurant_name }}</h2>
-        <p>{{ about_us.description }}</p>
-      </div>
+<div class="container home-about">
+  <div class="row justify-content-center">
+    <div class="col text-center mt-4">
+      <h2>About {{ about_us.restaurant_name }}</h2>
+      <p>{{ about_us.description }}</p>
     </div>
   </div>
 </div>
-
 
 <hr>
 
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+<div class="container home-menu">
+  <div class="row">
+    <div class="col-md-12">
 
-        <h2 class="text-center">Menu List with Price</h2>
+      <h2 class="text-center">Menu List with Price</h2>
 
-        <!-- Category links -->
-        <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
-          {% for category in categories %}
-          <li class="nav-item">
-            <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category.name }}" role="tab"
-              aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <!-- Category links -->
+      <ul class="nav menu-tab-nav" id="pills-tab" role="tablist">
+        {% for category in categories %}
+        <li class="nav-item">
+          <a class="nav-link" id="{{ category.name }}-tab" data-toggle="pill" href="#{{ category.name }}" role="tab"
+            aria-controls="{{ category.name }}" aria-selected="true">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
 
-        <!-- Tab links -->
-        <div class="tab-content" id="pills-tabContent">
-          {% for category in categories %}
-          <div class="tab-pane fade show" id="{{ category.name }}" role="tabpanel"
-            aria-labelledby="{{ category.name }}-tab">
+      <!-- Tab links -->
+      <div class="tab-content" id="pills-tabContent">
+        {% for category in categories %}
+        <div class="tab-pane fade show" id="{{ category.name }}" role="tabpanel"
+          aria-labelledby="{{ category.name }}-tab">
 
-            {% for meal in category.menuitem_set.all %}
-            {% if meal.category == category %}
-            <div class="d-block d-md-flex menu-food-item">
-              <div class="text order-1 mb-3">
-                <h3><a href="{% url 'menu:meal_details' meal.slug %}">{{ meal.name }}</a></h3>
-                <p>{{ meal.description|truncatewords:20 }}</p>
-              </div>
-              <div class="price order-2">
-                <strong>SEK {{ meal.price }}</strong>
-              </div>
+          {% for meal in category.menuitem_set.all %}
+          {% if meal.category == category %}
+          <div class="d-block d-md-flex menu-item">
+            <div class="text order-1 mb-3">
+              <h3><a href="{% url 'menu:meal_details' meal.slug %}">{{ meal.name }}</a></h3>
+              <p>{{ meal.description|truncatewords:20 }}</p>
             </div>
-            {% endif %}
-            {% empty %}
-            <p>No meals found for this category.</p>
-            {% endfor %}
+            <div class="price order-2">
+              <strong>SEK {{ meal.price }}</strong>
+            </div>
           </div>
+          {% endif %}
+          {% empty %}
+          <p>No meals found for this category.</p>
           {% endfor %}
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>
