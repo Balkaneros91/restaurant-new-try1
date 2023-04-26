@@ -64,10 +64,6 @@ a.nav-link {
   line-height: 1.5;
 }
 
-.cover-text {
-  margin-left: 50px;
-}
-
 .sub-heading {
   color: white;
   font-weight: 300;
@@ -196,21 +192,61 @@ hr {
 }
 
 
-/* Footer */
-/* 
-.footer a {
-  font-size: 18px;
+/* About Us */
+
+.about h2 {
+  font-size: 20px;
   padding-bottom: 5px;
 }
 
-.footer p {
-  font-size: 11px;
-  line-height: 0.5;
+.about p {
+  font-size: 12px;
+  padding: 10px 20px
 }
 
-.copy-right {
-  padding-bottom: 5px;
-} */
+.about-things h3 {
+  font-size: 20px;
+}
+
+.about-things h5 {
+  font-size: 15px;
+}
+
+.about-things p {
+  font-size: 12px;
+  padding: 0 20px
+}
+
+
+/* Menu */
+
+.menu h2 {
+  font-size: 20px;
+}
+
+.categories {
+  font-size: 15px;
+}
+
+.categories a:hover {
+  color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,18 +318,3 @@ table th {
   text-align: right;
   margin-right: 10px;
 } */
-
-
-
-/* @media (min-width: 768px) {
-  .menu-item .price {
-    width: 70px;
-    text-align: right;
-  }
-}
-
-@media (min-width: 992px) {
-  .half .text, .half .image {
-    width: 50%;
-  }
-}
