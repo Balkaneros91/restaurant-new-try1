@@ -20,22 +20,26 @@
 </div>
 
 
-<div class="section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col" data-aos="fade-up">
+<div class="container ">
+  <div class="row justify-content-center">
+    <div class="col">
 
-        <div class="card" style="width: 30rem;">
-          <img src="{{ meal_details.image.url }}" class="card-img-top" alt="#">
-          <div class="card-body">
-            <h5 class="card-title">{{ meal_details.name }}</h5>
-            <p class="card-text">{{ meal_details.description }}</p>
-            <p class="card-text">{{ meal_details.price }}</p>
-            <button type="button" class="btn btn-primary" onclick="window.history.back();">Back to Menu</button>
-          </div>
+      <div class="card no-border shadow-sm m-2">
+
+        {% if "placeholder" in meal_details.image.url %}
+        <img src="url(/static/site_static/img/no_image.jpg')">
+        {% else %}
+        <img src="{{ meal_details.image.url }}" alt="#{{ meal_details.name }}">
+        {% endif %}
+
+        <div class="card-body details">
+          <h5 class="card-title">{{ meal_details.name }}</h5>
+          <p class="card-text">{{ meal_details.description }}</p>
+          <p class="card-text">{{ meal_details.price }} SEK</p>
+          <button type="button" class="btn btn-outline-sedondary" onclick="window.history.back();">Back to Menu</button>
         </div>
-
       </div>
+
     </div>
   </div>
 </div>
