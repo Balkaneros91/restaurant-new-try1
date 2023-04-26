@@ -1,11 +1,14 @@
-/* html {
-  overflow-x: hidden;
-} */
-
 /* Base.HTML*/
-/* Nav-bar */
 /* 330 px*/
 
+
+/* Nav-bar */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .navbar {
   padding: 1px;
@@ -21,6 +24,24 @@ a.nav-link {
   font-size: 15px;
   line-height: 1;
 }
+
+
+/* Footer */
+
+.footer a {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.footer p {
+  font-size: 11px;
+  line-height: 0.5;
+}
+
+.copy-right {
+  padding-bottom: 5px;
+}
+
 
 
 /* index.HTML*/
@@ -41,6 +62,10 @@ a.nav-link {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
+}
+
+.cover-text {
+  margin-left: 50px;
 }
 
 .sub-heading {
@@ -85,17 +110,15 @@ hr {
 
 .home-menu ul {
   font-size: 12px;
-  padding-bottom: 5px;
 }
 
 
-
-/* Accordion */
+/* home-menu-items-tabs */
 
 .menu-tab-nav {
   display: block;
   text-align: center;
-  margin-bottom: 30px !important;
+  margin-bottom: 25px !important;
 }
 
 .menu-tab-nav li {
@@ -123,71 +146,132 @@ hr {
 }
 
 
-/* menu-item */
+/* home-menu-items */
 
-
-.menu-item .text {
-  width: calc(100%);
-}
-/* 
-
-@media (min-width: 768px) {
-  .menu-food-item .text {
-    width: calc(100% - 70px);
-  }
+.menu-item h3 {
+  font-size: 12px;
+  font-weight: 600;
 }
 
-
-.menu-food-item .price {
-  text-align: left;
-  width: 100%;
-}
-
-
-@media (min-width: 768px) {
-  .menu-food-item .price {
-    width: 70px;
-    text-align: right;
-  }
-}
-
-
-.menu-food-item .price strong {
-  color: #fdb44b;
-  font-size: 20px;
-}
-
-
-.menu-food-item h3 {
-  font-size: 22px;
-}
-
-
-.menu-food-item h3 a {
+.menu-item h3 a {
   color: #000;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
+  text-decoration: none;
 }
 
-
-.menu-food-item h3 a:hover {
+.menu-item h3 a:hover {
   color: gray;
 }
 
-
-.menu-food-item p:last-child {
+.menu-item p:last-child {
   margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.menu-item .price {
+  font-weight: 500;
+}
+
+.menu-item .price strong {
+  color: grey;
+  font-size: 12px;
+}
+
+/* Home Contacts */
+
+.home-contacts h2 {
+  font-size: 18px;
+}
+
+.home-contacts p {
+  font-size: 12px;
+  color: grey;
+}
+
+.home-contacts strong {
+  color: black;
 }
 
 
- */
+/* Footer */
+/* 
+.footer a {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
 
+.footer p {
+  font-size: 11px;
+  line-height: 0.5;
+}
+
+.copy-right {
+  padding-bottom: 5px;
+} */
+
+
+
+
+/* my code */
 
 table td,
 table th {
   padding: 0 10px;
 }
+
+
+/* @media queries */
+
+@media (min-width: 320px) {
+
+  .container,
+  .container-sm,
+  .container-xs {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 576px) {
+
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
 
 
 /* contacts.html p strong*/
@@ -198,3 +282,18 @@ table th {
   text-align: right;
   margin-right: 10px;
 } */
+
+
+
+/* @media (min-width: 768px) {
+  .menu-item .price {
+    width: 70px;
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .half .text, .half .image {
+    width: 50%;
+  }
+}
