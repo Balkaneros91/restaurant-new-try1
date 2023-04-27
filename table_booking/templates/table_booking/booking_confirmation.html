@@ -21,21 +21,6 @@
 </div>
 
 
-<!-- Message -->
-<div class="container message">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      {% for message in messages %}
-      <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-        {{ message | safe }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-
-
 <!-- booking.html -->
 
 <div class="section">
@@ -43,8 +28,8 @@
     <div class="row justify-content-center m-2">
       <div class="col-md-8 text-center">
         <h2 class="confirmation-title">Booking Confirmation</h2>
-
         <p class="p-text">Thank you for your booking!</p>
+        <hr>
 
         <p>Name: {{ booking.name }}</p>
         <p>Email: {{ booking.email }}</p>
@@ -59,14 +44,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  setTimeout(function () {
-    let messages = document.getElementById('msg');
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 2500);
-</script>
-
 
 {% endblock %}

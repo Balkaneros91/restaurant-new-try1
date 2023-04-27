@@ -367,6 +367,7 @@ hr {
 }
 
 p {
+  margin-top: 15px;
   line-height: 1;
 }
 
@@ -408,6 +409,11 @@ p {
   font-weight: 300;
   text-align: center;
   margin: 20px;
+}
+
+thead {
+  border-bottom: 1px solid lightgray;
+  line-height: 1.2;
 }
 
 table th {
@@ -491,14 +497,172 @@ table a {
 
 /* Delete booking */
 
+.delete h1 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.delete h2 {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.delete hr {
+  margin-bottom: 5px;
+}
+
+.delete p {
+  font-size: 12px;
+  text-align: center;
+  line-height: 0.5;
+  font-weight: 300;
+}
+
+.delete-btn {
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.delete-btn:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+.cancel-btn {
+  font-size: 12px;
+  border: 1px solid black;
+}
+
+.cancel-btn a {
+  font-size: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.cancel-btn a:hover,
+.cancel-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
+/* SignUp */
+
+.sign-up h1 {
+  font-size: 20px;
+}
+
+.sign-up p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.sign-up a {
+  text-decoration: none;
+}
+
+.sign-up label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.sign-up input {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.sign-up button {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 2;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.sign-up button:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+
 
 /* LogIn */
 
+.log-in h1 {
+  font-size: 20px;
+}
 
-/* SignIn */
+.log-in p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.log-in a {
+  text-decoration: none;
+}
+
+.log-in label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.log-in input {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.log-in button {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 2;
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.log-in button:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
 
 
 /* LogOut */
+
+.log-out h1 {
+  font-size: 20px;
+}
+
+.log-out p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.log-out button {
+  font-size: 12px;
+  line-height: 2;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.log-out button:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
 
 
 

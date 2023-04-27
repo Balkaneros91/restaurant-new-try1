@@ -51,31 +51,5 @@
   </div>
 </div>
 
-<script>
-  setTimeout(function () {
-    let messages = document.getElementById('msg');
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 2500);
-</script>
 
 {% endblock %}
-
-
-<!--
-<div class="container">
-  <div class="row">
-
-    <h1>Available Tables</h1>
-    {% for table in tables %}
-    <div class="table-card">
-      <h2>Table {{ table.number }}</h2>
-      <p>Capacity: {{ table.capacity }}</p>
-      <p>Description: {{ table.description }}</p>
-      <a href="{% url 'create_booking' %}?table={{ table.id }}" class="btn btn-primary">Book this table</a>
-    </div>
-    {% endfor %}
-
-  </div>
-</div>
--->

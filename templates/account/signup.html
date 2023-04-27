@@ -26,9 +26,9 @@
 </div>
 
 
-<div class="container">
+<div class="container sign-up">
   <div class="row">
-    <div class="col m-5">
+    <div class="col mx-2 my-4">
 
       <h1>{% trans "Sign Up" %}</h1>
 
@@ -41,7 +41,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+        <button class="btn" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
 
     </div>

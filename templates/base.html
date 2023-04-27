@@ -105,6 +105,20 @@
         </div>
     </div>
 
+    <!-- Message -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     <!-- Define the main content of the page -->
     {% block content %}
@@ -161,6 +175,7 @@
 
     <!-- font awesome script -->
     <script src="https://kit.fontawesome.com/58d92d93b9.js" crossorigin="anonymous"></script>
+
 
     <script>
         setTimeout(function () {
