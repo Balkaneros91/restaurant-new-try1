@@ -10,9 +10,13 @@ class BookingTableForm(forms.ModelForm):
         # fields = '__all__'
         fields = ('name', 'email', 'phone', 'number_of_guests', 'date', 'reservation_time', 'notes', 'table')
         widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your name'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number'}),
+
             'date': forms.DateInput(attrs={'type': 'date'}),
             'reservation_time': forms.TimeInput(attrs={'type': 'time'}),
-            'notes': forms.Textarea(attrs={'rows': 2}),
+            'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any notes'}),
         }
 
 

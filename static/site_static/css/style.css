@@ -26,6 +26,13 @@ a.nav-link {
   line-height: 1;
 }
 
+.sticky-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
 
 /* Footer */
 
@@ -125,7 +132,6 @@ hr {
   zoom: 1;
 }
 
-
 .menu-tab-nav li a {
   color: black;
   font-size: 10px;
@@ -134,7 +140,6 @@ hr {
   padding-right: 0;
   margin: 0 10px;
 }
-
 
 .menu-tab-nav li a.active {
   color: black;
@@ -307,23 +312,195 @@ hr {
 }
 
 
+/* Booking form */
 
-
-
-
-
-
-
-
-
-
-
-/* my code */
-
-table td,
-table th {
-  padding: 0 10px;
+.form-group {
+  font-size: 12px;
+  font-weight: 300;
 }
+
+.booking-form input {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.booking-form textarea {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.booking-form select {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.book-table {
+  font-size: 10px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.book-table:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+
+/* Booking confirmation */
+
+.confirmation-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.p-text {
+  font-weight: 600;
+  margin: 15px;
+  padding-bottom: 5px;
+}
+
+.confirmation {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+p {
+  line-height: 1;
+}
+
+
+/* POP-up message */
+
+.message {
+  font-size: 12px;
+  font-weight: 300;
+  color: darkseagreen;
+}
+
+.btn-close {
+  font-size: 8px;
+}
+
+
+/* Contacts page */
+
+.contacts h2 {
+  font-size: 18px;
+}
+
+.contacts p {
+  font-size: 12px;
+  color: grey;
+}
+
+.contacts strong {
+  color: black;
+}
+
+
+
+/* my-bookings page */
+
+.bookings h1 {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  margin: 20px;
+}
+
+table th {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0px;
+}
+
+table td {
+  font-weight: 300;
+  font-size: 10px;
+}
+
+table a {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+/* Edit booking */
+
+.edit-form h1 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 15px;
+}
+
+.edit-form input {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.edit-form label {
+  font-weight: 600;
+}
+
+.edit-form textarea {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.edit-form select {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.btns {
+  margin: 15px;
+}
+
+.edit-btn {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.edit-btn:hover {
+  color: white;
+  background-color: black;
+  border: 1px solid grey;
+}
+
+.cancel-btn {
+  font-size: 12px;
+  border: 1px solid black;
+}
+
+.cancel-btn a {
+  font-size: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.cancel-btn a:hover,
+.cancel-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+
+/* Delete booking */
+
+
+/* LogIn */
+
+
+/* SignIn */
+
+
+/* LogOut */
+
+
 
 
 /* @media queries */
@@ -385,3 +562,23 @@ table th {
   text-align: right;
   margin-right: 10px;
 } */
+
+
+
+/* <style>
+html, body {
+  height: 100%;
+}
+
+.content {
+  min-height: calc(100% - (height of footer));
+  Add any padding/margin you want
+}
+
+footer {
+  height: (height of footer);
+  position: sticky;
+  bottom: 0;
+  Add any padding/margin you want
+}
+</style> */

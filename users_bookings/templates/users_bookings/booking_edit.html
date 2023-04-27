@@ -22,16 +22,18 @@
 </div>
 
 
-<div class="container">
+<div class="container edit-form">
   <div class="row">
-    <div class="col m-5">
+    <div class="col-md-6">
 
       <h1>Edit Booking</h1>
       <form method="post">
         {% csrf_token %}
         {{ form | crispy }}
-        <input class="btn btn-outline-secondary" type="submit" value="Save Changes">
-        <button class="btn btn-outline-secondary"><a href="{% url 'booking_list' %}">Cancel</a></button>
+        <div class="btns text-center">
+          <input class="btn edit-btn" type="submit" value="Save Changes">
+          <button class="btn cancel-btn"><a href="{% url 'booking_list' %}">Cancel</a></button>
+        </div>
       </form>
 
     </div>

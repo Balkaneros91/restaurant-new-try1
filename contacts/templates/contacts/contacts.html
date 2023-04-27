@@ -20,19 +20,16 @@
 </div>
 
 
-<div class="section">
-  <div class="container">
-    <div class="row justify-content-center m-5" data-aos="fade-up">
-      <div class="col-md-6 text-right">
-        <h1 class="pb-3">Contact Details: </h1>
-        <p><strong>Name: </strong>{{ contacts.name }}</p>
-        <p><strong>Email: </strong>{{ contacts.email }}</p>
-        <p><strong>Phone number: </strong>{{ contacts.phone_number }}</p>
-        <p><strong>Address: </strong>{{ contacts.address }}</p>
-      </div>
+<div class="container contacts">
+  <div class="row justify-content-center m-3">
+    <div class="col-md-6 text-right">
+      <h2 class="pb-3">Contact Details: </h2>
+      <p><strong>Name: </strong>{{ contacts.name }}</p>
+      <p><strong>Email: </strong>{{ contacts.email }}</p>
+      <p><strong>Phone number: </strong>{{ contacts.phone_number }}</p>
+      <p><strong>Address: </strong>{{ contacts.address }}</p>
     </div>
   </div>
 </div>
-
 
 {% endblock %}

@@ -20,44 +20,42 @@
 </div>
 
 
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 p-5">
-        <h1>My Bookings</h1>
+<div class="container bookings">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1>My Bookings</h1>
 
-        {% if bookings %}
-        <table>
-          <thead>
-            <tr>
-              <th>Nr. of Guests</th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Contact</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for booking in bookings %}
-            <tr>
-              <td>{{ booking.number_of_guests }} pers.</td>
-              <td>{{ booking.name }}</td>
-              <td>{{ booking.date }}</td>
-              <td>{{ booking.reservation_time }}</td>
-              <td>{{ booking.phone }}</td>
-              <td>
-                <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
-                <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        {% else %}
-        <p>You haven't made any bookings yet.</p>
-        {% endif %}
-      </div>
+      {% if bookings %}
+      <table>
+        <thead>
+          <tr>
+            <th>Nr. of Guests</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+          <tr>
+            <td>{{ booking.number_of_guests }} pers.</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.date }} -</td>
+            <td>{{ booking.reservation_time }}</td>
+            <td>({{ booking.phone }})</td>
+            <td>
+              <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
+              <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>You haven't made any bookings yet.</p>
+      {% endif %}
     </div>
   </div>
 </div>
