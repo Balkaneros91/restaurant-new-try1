@@ -20,6 +20,22 @@ class BookingTableForm(forms.ModelForm):
         }
 
 
+class ApproveTableForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ('approved',)
+        # widgets = {
+        #     'name': forms.TextInput(attrs={'placeholder': 'Enter your name', 'disabled': 'disabled'}),
+        #     'email': forms.EmailInput(attrs={'placeholder': 'Enter your email', 'disabled': True, 'required': False}),
+        #     'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number', 'disabled': 'disabled'}),
+
+        #     'date': forms.DateInput(attrs={'type': 'date', 'readonly': True, 'disabled': True, 'required': False}),
+        #     'reservation_time': forms.TimeInput(attrs={'type': 'time', 'disabled': True}),
+        #     'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any notes', 'disabled': 'disabled'}),
+        # }
+
+
+
 # class BookingTableForm(forms.ModelForm):
 #     table = forms.ModelChoiceField(queryset=Table.objects.all(), empty_label='Select a table')
 #     name = forms.CharField(max_length=50, required=True)

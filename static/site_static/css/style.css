@@ -372,17 +372,18 @@ p {
 }
 
 
+
 /* POP-up message */
 
-.message {
-  font-size: 12px;
-  font-weight: 300;
-  color: darkseagreen;
+.hide {
+  display: none;
 }
 
-.btn-close {
-  font-size: 8px;
+#msg {
+  margin-top: 60px;
 }
+
+
 
 
 /* Contacts page */
@@ -463,7 +464,7 @@ table a {
 }
 
 .btns {
-  margin: 15px;
+  margin: 10px;
 }
 
 .edit-btn {
@@ -523,6 +524,7 @@ table a {
 
 .delete-btn {
   font-size: 12px;
+  font-weight: 300;
   background-color: white;
   border: 1px solid black;
 }
@@ -663,6 +665,38 @@ table a {
   background-color: black;
   border: 1px solid grey;
 }
+
+
+
+/* Styles for screens with a maximum width of 768px */
+
+/* @media (max-width: 768px) {
+  .heading {
+    font-size: 24px;
+  }
+  .sub-heading {
+    font-size: 18px;
+  }
+  .home-about p {
+    font-size: 16px;
+  }
+} */
+
+/* Styles for screens with a minimum width of 769px */
+
+/* @media (min-width: 769px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .sub-heading {
+    font-size: 24px;
+  }
+
+  .home-about p {
+    font-size: 18px;
+  }
+} */
 
 
 

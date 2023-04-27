@@ -17,7 +17,6 @@ def book_a_table(request):
             booking = booking_form.save(commit=False)
             booking.user = request.user
             booking.save()
-            messages.success(request, 'Your booking has been confirmed.')
             return redirect('booking_confirmation')
 
     context = {'form': booking_form}
@@ -28,4 +27,5 @@ def book_a_table(request):
 def booking_confirmation(request):
     latest_booking = Booking.objects.last()
     context = {'booking': latest_booking}
+    messages.success(request, 'Your booking is being reviewed.')
     return render(request, 'table_booking/booking_confirmation.html', context)

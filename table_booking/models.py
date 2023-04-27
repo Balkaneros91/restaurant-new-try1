@@ -26,6 +26,8 @@ class Booking(models.Model):
     reservation_time = models.TimeField()
     notes = models.TextField(null=True, blank=True)
 
+    approved = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 
