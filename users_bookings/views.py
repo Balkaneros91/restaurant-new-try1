@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from table_booking.models import Booking
-from table_booking.forms import BookingTableForm, ApproveTableForm
+from table_booking.forms import BookingTableForm
 
 # Create your views here.
 
@@ -40,31 +41,39 @@ def booking_list(request):
 @login_required
 def booking_edit(request, pk):
     booking = get_object_or_404(Booking, pk=pk)
-    form = BookingTableForm(request.POST or None, instance=booking)
 
     if request.method == 'POST':
-        if request.user.is_superuser:
-            form = ApproveTableForm(request.POST, instance=booking)
-        else:
-            form = BookingTableForm(request.POST, instance=booking)
+        form = BookingTableForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
             messages.success(request, 'Booking successfully updated!')
             return redirect('booking_list')
     else:
-        if request.user.is_superuser:
-            form = ApproveTableForm(instance=booking)
-        else:
-            form = BookingTableForm(instance=booking)
+        form = BookingTableForm(instance=booking)
     context = {'form': form}
     return render(request, 'users_bookings/booking_edit.html', context)
 
+
+
+# @login_required
+# def booking_edit(request, pk):
+#     booking = get_object_or_404(Booking, pk=pk, user_id=request.user.id)
+#     if request.method == 'POST':
+#         form = BookingTableForm(request.POST, instance=booking)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('booking_list')
+#     else:
+#         form = BookingTableForm(instance=booking)
+#     context = {'form': form}
+#     return render(request, 'users_bookings/booking_edit.html', context)
 
 
 
 @login_required
 def booking_delete(request, pk):
     booking = get_object_or_404(Booking, pk=pk)
+
     if request.method == 'POST':
         booking.delete()
         messages.success(request, 'Booking successfully deleted!')

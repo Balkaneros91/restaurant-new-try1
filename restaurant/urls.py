@@ -15,22 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
 from django.conf.urls.static import static
 from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-
     path('', include('home.urls')),
     path('about/', include('about.urls')),
     path('menu/', include('menu.urls', namespace='menu')),
     path('bookings/', include('table_booking.urls')),
     path('my-booking/', include('users_bookings.urls')),
     path('contacts/', include('contacts.urls')),
-
+    path('accounts/', include('allauth.urls')),
     path('summernote/', include('django_summernote.urls')),
 ]
 

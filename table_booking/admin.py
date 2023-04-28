@@ -13,10 +13,16 @@ class TableAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
-    list_display = ('name', 'number_of_guests', 'reservation_date_and_time', 'created_on', 'notes', 'approved')
-    list_filter = ('reservation_date_and_time', 'approved',)
-    search_fields = ['name', 'number_of_guests', 'reservation_date_and_time']
-    actions = ['approve_bookings']
+    list_display = ('name', 'number_of_guests', 'reservation_date', 'reservation_time', 'created_on', 'notes', 'status')
+    list_filter = ('reservation_date', 'status',)
+    search_fields = ['name', 'number_of_guests', 'reservation_date', 'reservation_time']
+    actions = ['change_status']
 
-    def approve_bookings(self, request, queryset):
-        queryset.update(approved=True)
+    def change_status(self, request, queryset):
+        queryset.update(status='Booked')
+
+
+# Admin page changes
+admin.site.site_header = 'Restaurant AdminPanel'
+admin.site.site_title = 'Restaurant App Admin'
+admin.site.site_index_title = 'Welcome to Restaurant Admin Panel'
