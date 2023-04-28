@@ -22,7 +22,6 @@
 
 
 <!-- booking.html -->
-
 <div class="section">
   <div class="container confirmation">
     <div class="row justify-content-center m-2">
@@ -35,10 +34,11 @@
         <p>Email: {{ booking.email }}</p>
         <p>Phone: {{ booking.phone }}</p>
         <p>Number of people: {{ booking.number_of_guests }}</p>
-        <p>Date: {{ booking.reservation_date_and_time }}</p>
-        {% if note in notes %}
+        <p>Date and Time: {{ booking.reservation_date }} {{ booking.reservation_time }}</p>
+        {% if booking.notes %}
         <p>Notes: {{ booking.notes }}</p>
         {% endif %}
+        
       </div>
     </div>
   </div>

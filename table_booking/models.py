@@ -25,7 +25,7 @@ class Booking(models.Model):
     number_of_guests = models.IntegerField(default=2)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
-    reservation_date = models.DateTimeField(default=timezone.now)
+    reservation_date = models.DateTimeField()
     reservation_time = models.TimeField(default=timezone.now)
     notes = models.TextField(max_length=300, null=True, blank=True)
     status = models.CharField(choices=STATUS, max_length=10, default='Pending')

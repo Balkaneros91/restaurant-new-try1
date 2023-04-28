@@ -28,22 +28,38 @@ class BookingTableForm(forms.ModelForm):
             else:
                 return number_of_guests
 
-        # def clean_reservation_date_and_time(self):
-        #     reservation_date_and_time = self.cleaned_data.get('reservation_date_and_time')
-        #     if reservation_date_and_time < timezone.now():
+        def clean_number_of_guests(self):
+            number_of_guests = self.cleaned_data.get('number_of_guests')
+            if number_of_guests is None:
+                raise ValidationError('Please enter a valid number of guests')
+
+            if number_of_guests <= 0:
+                raise ValidationError('Number of guests must be greater than zero')
+
+            if number_of_guests > 8:
+                raise ValidationError('Sorry, we cannot accommodate parties larger than 8 guests')
+
+            return number_of_guests
+
+        def clean(self):
+            cleaned_data = super().clean()
+            reservation_date = cleaned_data.get('reservation_date')
+            reservation_time = cleaned_data.get('reservation_time')
+            now = timezone.now()
+
+            if reservation_date is not None and reservation_time is not None:
+                reservation_datetime = timezone.make_aware(
+                    timezone.datetime.combine(reservation_date, reservation_time),
+                    timezone.get_current_timezone()
+                )
+                if reservation_datetime < now:
+                    raise ValidationError('Reservation date and time cannot be in the past')
+                elif reservation_datetime - now < timezone.timedelta(minutes=30):
+                    raise ValidationError('Reservation must be made at least 30 minutes in advance')
+            return cleaned_data
+
+        # def clean_reservation_date(self):
+        #     reservation_date = self.cleaned_data.get('reservation_date')
+        #     if reservation_date < timezone.now():
         #         raise ValidationError('Reservation date and time cannot be in the past')
-        #     return reservation_date_and_time
-
-
-# class ApproveTableForm(forms.ModelForm):
-#     class Meta:
-#         model = Booking
-#         fields = ('name', 'email', 'phone', 'number_of_guests', 'reservation_date_and_time', 'notes')
-#         widgets = {
-#             'name': forms.TextInput(attrs={'disabled': True}),
-#             'email': forms.EmailInput(attrs={'disabled': True}),
-#             'phone': forms.TextInput(attrs={'disabled': True}),
-#             'number_of_guests': forms.TextInput(attrs={'disabled': True}),
-#             'reservation_date_and_time': forms.DateInput(attrs={'type': 'date', 'disabled': True}),
-#             'notes': forms.Textarea(attrs={'rows': 2, 'disabled': True}),
-#         }
+        #     return reservation_date
