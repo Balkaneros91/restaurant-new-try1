@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.urls import reverse
 from .models import Booking
 from .forms import BookingTableForm
 
@@ -17,6 +18,7 @@ def book_a_table(request):
             booking.user = request.user
             booking.save()
             messages.success(request, 'Your booking is being reviewed.')
+            # return redirect(reverse('booking_confirmation', args=[booking.id]))
             return redirect('booking_confirmation')
 
     context = {'form': booking_form}
@@ -25,6 +27,7 @@ def book_a_table(request):
 
 
 def booking_confirmation(request):
-    latest_booking = Booking.objects.last()
-    context = {'booking': latest_booking}
+    booking = Booking.objects.all()  # ???
+    # booking = get_object_or_404(Booking, pk=pk)
+    context = {'booking': booking}
     return render(request, 'table_booking/booking_confirmation.html', context)
