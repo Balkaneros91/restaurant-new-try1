@@ -7,11 +7,11 @@ setTimeout(function () {
 
 // Home page Menu tabs
 
-setTimeout(function () {
-    let messages = document.getElementById('msg');
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 2500);
+// setTimeout(function () {
+//     let messages = document.getElementById('msg');
+//     let alert = new bootstrap.Alert(messages);
+//     alert.close();
+//   }, 2500);
 
   $(document).ready(function () {
     // Activate the first tab by default

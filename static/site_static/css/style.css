@@ -15,8 +15,21 @@ body {
   padding: 1px;
 }
 
+.red-c {
+  color: red;
+}
+
+.blue-b {
+  color: #65cdda;
+}
+
+button.navbar-toggler {
+  color: #65cdda;
+}
+
 span.navbar-toggler-icon {
   font-size: 15px;
+  color: #65cdda;
 }
 
 a.nav-link {
@@ -63,6 +76,7 @@ a.nav-link {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  opacity: 0.9;
 }
 
 .heading {
@@ -70,7 +84,9 @@ a.nav-link {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
+  background: rgba(215, 177, 177, 0.4);
 }
+
 
 .sub-heading {
   color: white;
@@ -87,9 +103,16 @@ a.nav-link {
 
 /* Home About*/
 
+.home-about {
+  background: #d5aeaef5;
+}
+
+.home-contacts {
+  background: #d5aeaef5;
+}
+
 .home-about h2 {
   font-size: 20px;
-  padding-bottom: 5px;
 }
 
 .home-about p {
@@ -225,6 +248,23 @@ hr {
 
 
 /* Menu */
+
+.menu-cover_img .menu-img_bg>.container>.row {
+  min-height: 200px;
+  height: 50vh;
+}
+
+.menu-cover-img {
+  position: relative;
+}
+
+.menu-img-bg {
+  background-size: cover !important;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  opacity: 0.9;
+}
 
 .menu h2 {
   font-size: 20px;
@@ -668,23 +708,78 @@ table a {
 
 
 
-/* Styles for screens with a maximum width of 768px */
 
-/* @media (max-width: 768px) {
+/* $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); */
+
+
+
+/* Styles for screens with a minimum width of 320px */
+
+@media (min-width: 300px) {
+
+  .cover-text {
+    text-align: end;
+    margin-top: 5rem;
+  }
+
   .heading {
     font-size: 24px;
   }
+
   .sub-heading {
     font-size: 18px;
   }
+
+  .home-about p {
+    font-size: 12px;
+  }
+}
+
+
+/* Styles for screens with a minimum width of 576px */
+
+@media (min-width: 576px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
   .home-about p {
     font-size: 16px;
   }
-} */
+}
 
-/* Styles for screens with a minimum width of 769px */
 
-/* @media (min-width: 769px) {
+/* Styles for screens with a minimum width of 768px */
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .home-about p {
+    font-size: 16px;
+  }
+}
+
+
+/* Styles for screens with a minimum width of 992px */
+
+@media (min-width: 992px) {
   .heading {
     font-size: 36px;
   }
@@ -696,7 +791,54 @@ table a {
   .home-about p {
     font-size: 18px;
   }
-} */
+
+  .cover_img .img_bg>.container>.row {
+    min-height: 200px;
+    /* height: 50vh; */
+  }
+
+  .cover-text {
+    text-align: end;
+    /* margin-left: 21rem; */
+  }
+}
+
+
+
+
+
+/* Styles for screens with a minimum width of 1200px */
+
+@media (min-width: 1200px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .sub-heading {
+    font-size: 24px;
+  }
+
+  .home-about p {
+    font-size: 18px;
+  }
+}
+
+
+/* Styles for screens with a minimum width of 1400px */
+
+@media (min-width: 1400px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .sub-heading {
+    font-size: 24px;
+  }
+
+  .home-about p {
+    font-size: 18px;
+  }
+}
 
 
 
