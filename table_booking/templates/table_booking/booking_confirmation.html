@@ -35,8 +35,7 @@
         <p>Email: {{ booking.email }}</p>
         <p>Phone: {{ booking.phone }}</p>
         <p>Number of people: {{ booking.number_of_guests }}</p>
-        <p>Date: {{ booking.date }}</p>
-        <p>Time: {{ booking.reservation_time }}</p>
+        <p>Date: {{ booking.reservation_date_and_time }}</p>
         {% if note in notes %}
         <p>Notes: {{ booking.notes }}</p>
         {% endif %}

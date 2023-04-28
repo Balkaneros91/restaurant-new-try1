@@ -11,7 +11,6 @@ def book_a_table(request):
 
     if request.method == 'POST':
         booking_form = BookingTableForm(request.POST)
-        print(request.POST)
 
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)

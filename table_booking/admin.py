@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Table, Booking
 
 # Register your models here.
@@ -11,6 +12,11 @@ class TableAdmin(admin.ModelAdmin):
 
 
 @admin.register(Booking)
-class BookingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'table', 'name', 'number_of_guests', 'notes')
-    list_filter = ('name', 'email', 'date',)
+class BookingAdmin(SummernoteModelAdmin):
+    list_display = ('name', 'number_of_guests', 'reservation_date_and_time', 'created_on', 'notes', 'approved')
+    list_filter = ('reservation_date_and_time', 'approved',)
+    search_fields = ['name', 'number_of_guests', 'reservation_date_and_time']
+    actions = ['approve_bookings']
+
+    def approve_bookings(self, request, queryset):
+        queryset.update(approved=True)

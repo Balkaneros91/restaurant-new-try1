@@ -1,67 +1,50 @@
 from django import forms
-from .models import Booking, Table
-
+from django.core.exceptions import ValidationError
+from .models import Booking
+from .widget import DatePickerInput
 from django.utils import timezone
 
 
 class BookingTableForm(forms.ModelForm):
     class Meta:
         model = Booking
-        # fields = '__all__'
-        fields = ('name', 'email', 'phone', 'number_of_guests', 'date', 'reservation_time', 'notes', 'table')
+        fields = ('name', 'email', 'phone', 'number_of_guests', 'reservation_date_and_time', 'notes')
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Enter your name'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
             'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number'}),
-
-            'date': forms.DateInput(attrs={'type': 'date'}),
-            'reservation_time': forms.TimeInput(attrs={'type': 'time'}),
-            'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any notes'}),
+            'number_of_guests': forms.NumberInput(attrs={'min': 1, 'max': 8}),
+            'reservation_date_and_time': DatePickerInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+            'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any special request'}),
         }
+
+    def clean_number_of_guests(self):
+        number_of_guests = self.cleaned_data.get('number_of_guests')
+        if number_of_guests <= 0:
+            raise ValidationError('Number of guests must be greater than zero')
+        elif number_of_guests and number_of_guests > 8:
+            raise forms.ValidationError("Please call or email for parties larger than 8")
+        else:
+            return number_of_guests
+
+    def clean_reservation_date_and_time(self):
+        reservation_date_and_time = self.cleaned_data.get('reservation_date_and_time')
+        if reservation_date_and_time < timezone.now():
+            raise ValidationError('Reservation date and time cannot be in the past')
+        return reservation_date_and_time
 
 
 class ApproveTableForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ('approved',)
-        # widgets = {
-        #     'name': forms.TextInput(attrs={'placeholder': 'Enter your name', 'disabled': 'disabled'}),
-        #     'email': forms.EmailInput(attrs={'placeholder': 'Enter your email', 'disabled': True, 'required': False}),
-        #     'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number', 'disabled': 'disabled'}),
-
-        #     'date': forms.DateInput(attrs={'type': 'date', 'readonly': True, 'disabled': True, 'required': False}),
-        #     'reservation_time': forms.TimeInput(attrs={'type': 'time', 'disabled': True}),
-        #     'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any notes', 'disabled': 'disabled'}),
-        # }
-
-
-
-# class BookingTableForm(forms.ModelForm):
-#     table = forms.ModelChoiceField(queryset=Table.objects.all(), empty_label='Select a table')
-#     name = forms.CharField(max_length=50, required=True)
-#     email = forms.EmailField(required=True)
-#     phone = forms.CharField(max_length=30, required=True)
-#     number_of_guests = forms.IntegerField(min_value=1, max_value=8, required=True)
-#     date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
-#     # date = forms.DateTimeField(widget=DateTimeInput(attrs={'type': 'datetime-local'}), input_formats=['%Y-%m-%dT%H:%M'])
-#     reservation_time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}), required=True)
-#     notes = forms.CharField(widget=forms.Textarea(attrs={'rows': 2}), required=False)
-
-#     class Meta:
-#         model = Booking
-#         fields = ('name', 'email', 'phone', 'number_of_guests', 'date', 'reservation_time', 'notes')
-#         widgets = {
-#             'date': forms.DateInput(attrs={'type': 'date'}),
-#             'reservation_time': forms.TimeInput(attrs={'type': 'time'}),
-        # }
-
-    # def clean_date(self):
-    #     date = self.cleaned_data.get('date')
-    #     if date < timezone.localdate():
-    #         raise forms.ValidationError("Cannot book for past dates.")
-    #     return date
-
-    # def __init__(self, table_id, *args, **kwargs):
-    #     super(BookingTableForm, self).__init__(*args, **kwargs)
-    #     table = Table.objects.get(id=table_id)
-    #     self.fields['reservation_time'].choices = [(choice, choice) for choice in table.available_times]
+        fields = ('name', 'email', 'phone', 'number_of_guests', 'reservation_date_and_time', 'notes', 'table', 'approved')
+        widgets = {
+            'name': forms.TextInput(attrs={'disabled': True}),
+            'email': forms.EmailInput(attrs={'disabled': True}),
+            'phone': forms.TextInput(attrs={'disabled': True}),
+            'number_of_guests': forms.TextInput(attrs={'disabled': True}),
+            'reservation_date_and_time': forms.DateInput(attrs={'type': 'date', 'disabled': True}),
+            'notes': forms.Textarea(attrs={'rows': 2, 'disabled': True}),
+            'table': forms.Select(attrs={'rows': 1}),
+            'approved': forms.CheckboxInput(),
+        }
