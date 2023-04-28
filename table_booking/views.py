@@ -27,7 +27,6 @@ def book_a_table(request):
 
 
 def booking_confirmation(request):
-    booking = Booking.objects.all()  # ???
-    # booking = get_object_or_404(Booking, pk=pk)
+    booking = Booking.objects.first()
     context = {'booking': booking}
     return render(request, 'table_booking/booking_confirmation.html', context)

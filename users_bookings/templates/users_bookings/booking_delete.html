@@ -39,7 +39,7 @@
           {% csrf_token %}
           <div class="btns">
             <input class="btn delete-btn" type="submit" value="Delete">
-            <button class="btn cancel-btn"><a href="{% url 'booking_list' %}">Cancel</a></button>
+            <a class="btn cancel-btn" href="{% url 'booking_list' %}">Cancel</a>
           </div>
         </form>
 

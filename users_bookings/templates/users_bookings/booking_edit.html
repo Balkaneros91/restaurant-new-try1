@@ -32,7 +32,7 @@
         {{ form | crispy }}
         <div class="btns text-center">
           <input class="btn edit-btn" type="submit" value="Update">
-          <button class="btn cancel-btn"><a href="{% url 'booking_list' %}">Cancel</a></button>
+          <a class="btn cancel-btn" href="{% url 'booking_list' %}">Cancel</a>
         </div>
       </form>
 
