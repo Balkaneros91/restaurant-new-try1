@@ -57,9 +57,3 @@ class BookingTableForm(forms.ModelForm):
                 elif reservation_datetime - now < timezone.timedelta(minutes=30):
                     raise ValidationError('Reservation must be made at least 30 minutes in advance')
             return cleaned_data
-
-        # def clean_reservation_date(self):
-        #     reservation_date = self.cleaned_data.get('reservation_date')
-        #     if reservation_date < timezone.now():
-        #         raise ValidationError('Reservation date and time cannot be in the past')
-        #     return reservation_date

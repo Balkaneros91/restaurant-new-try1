@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from menu.models import Category, MenuItem
 from about.models import AboutUs
-from contacts.models import Contact
+from contacts.models import Contact, OpenHours
 
 # Create your views here.
 
@@ -14,6 +14,7 @@ def home_view(request):
     meal_list = MenuItem.objects.all()
     about_us = AboutUs.objects.last()
     contacts = Contact.objects.last()
+    open_hours = OpenHours.objects.all()
 
     context = {
         'categories': categories,
@@ -21,7 +22,7 @@ def home_view(request):
         'meal_list': meal_list,
         'about_us': about_us,
         'contacts': contacts,
-        # 'meal_slug_attr': 'slug',
+        'open_hours': open_hours,
     }
 
     return render(request, 'home/index.html', context)

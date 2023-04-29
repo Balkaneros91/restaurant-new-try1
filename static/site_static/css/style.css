@@ -9,6 +9,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: #d5aeaef5;
 }
 
 .navbar {
@@ -37,6 +38,7 @@ a.nav-link {
   /* when burger opens */
   font-size: 15px;
   line-height: 1;
+  color: white;
 }
 
 .sticky-top {
@@ -130,6 +132,10 @@ hr {
 
 /* Home Menu*/
 
+.home-menu {
+  background-color: white;
+}
+
 .home-menu h2 {
   font-size: 18px;
   margin: 15px;
@@ -213,7 +219,8 @@ hr {
 
 .home-contacts p {
   font-size: 12px;
-  color: grey;
+  color: black;
+  font-weight: 400;
 }
 
 .home-contacts strong {
@@ -449,7 +456,7 @@ p {
   font-size: 18px;
   font-weight: 300;
   text-align: center;
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
 thead {

@@ -3,31 +3,29 @@
 {% load i18n %}
 {% load static %}
 
-{% block extra_title %}- Error: 404{% endblock %}
-
-{% block extra_css %}
-<style>
-  html,
-  body {
-    background-color: var(--main-purple);
-  }
-</style>
-{% endblock %}
+{% block extra_title %}- Error: 403{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row h-100">
-    <div class="col col-lg-6 col-md-8 col-sm-12 m-auto text-center p-3">
-      <div class="card border-0">
-        <img src="{% static 'img/404-page.png' %}" class="card-img-top" alt="Tribe 404 page image">
-        <div class="card-body">
-          <h1 class="card-title logo-text">Oops, page not found</h1>
-          <h5 class="card-text">Looks like you got lost along the way.</h5>
-          <h4>
-            <a href="{% url 'home' %}" class="sign-up-button btn btn-lg text-uppercase py-2">Back to your Tribe</a>
-        </h4>
+
+
+<!-- Cover image -->
+<div class="cover_img">
+  <div class="img_bg" style="background-image: url({% static 'site_static/img/plato-comida-cubana-ropa-vieja.jpg' %})">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-8 cover-text">
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Forbidden (403)</h1>
+      <p>You don't have permission to access this page.</p>
     </div>
   </div>
 </div>

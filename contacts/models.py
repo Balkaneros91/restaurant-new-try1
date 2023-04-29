@@ -10,3 +10,12 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'contact'
         verbose_name_plural = 'contacts'
+
+
+class OpenHours(models.Model):
+    days = models.CharField(max_length=100)
+    hours = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = 'open hour'
+        verbose_name_plural = 'open hours'

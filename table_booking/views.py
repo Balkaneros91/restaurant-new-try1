@@ -12,17 +12,14 @@ def book_a_table(request):
 
     if request.method == 'POST':
         booking_form = BookingTableForm(request.POST)
-
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
             booking.user = request.user
             booking.save()
             messages.success(request, 'Your booking is being reviewed.')
-            # return redirect(reverse('booking_confirmation', args=[booking.id]))
             return redirect('booking_confirmation')
 
     context = {'form': booking_form}
-
     return render(request, 'table_booking/table_booking_form.html', context)
 
 
