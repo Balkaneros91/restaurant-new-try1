@@ -32,12 +32,7 @@
             <th>Date</th>
             <th>Time</th>
             <th>Contact</th>
-            <th></th>
-            <th></th>
             <th>Status</th>
-            <th></th>
-            <th></th>
-            <th></th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -49,12 +44,7 @@
             <td>{{ booking.reservation_date }}</td>
             <td>{{ booking.reservation_time }}</td>
             <td>({{ booking.phone }})</td>
-            <td></td>
-            <td></td>
             <td>({{ booking.status }})</td>
-            <td></td>
-            <td></td>
-            <td></td>
             <td>
               <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
               <a class="a-delete" href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
