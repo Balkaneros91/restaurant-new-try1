@@ -22,7 +22,7 @@ class MenuItem(models.Model):
     description = models.TextField(max_length=400)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     # image = models.ImageField(blank=True, null=False, upload_to='menu/')
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='placeholder.jpg')
     slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)
 
     def save(self, *args, **kwargs):

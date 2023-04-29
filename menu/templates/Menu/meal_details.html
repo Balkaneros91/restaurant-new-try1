@@ -24,8 +24,9 @@
 
       <div class="card no-border shadow-sm m-2">
 
-        {% if "placeholder" in meal_details.image.url %}
-        <img src="url(/static/site_static/img/no_image.jpg')">
+        {% if "placeholder" in  meal_details.image.url %}
+        <img src="{% static 'site_static/img/no_image.jpg' %}" alt="No image available">
+       
         {% else %}
         <img src="{{ meal_details.image.url }}" alt="#{{ meal_details.name }}">
         {% endif %}

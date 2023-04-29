@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.core.validators import MinValueValidator
+import datetime
 
 
 # Create your models here.
@@ -25,7 +27,7 @@ class Booking(models.Model):
     number_of_guests = models.IntegerField(default=2)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now=True)
-    reservation_date = models.DateTimeField()
+    reservation_date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
     reservation_time = models.TimeField(default=timezone.now)
     notes = models.TextField(max_length=300, null=True, blank=True)
     status = models.CharField(choices=STATUS, max_length=10, default='Pending')
