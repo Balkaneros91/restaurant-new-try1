@@ -7,8 +7,8 @@ from datetime import time
 
 
 def validate_opening_hours(value):
-    opening_time = time(14, 0)  # replace with your opening time
-    closing_time = time(23, 0)  # replace with your closing time
+    opening_time = time(14, 0)
+    closing_time = time(23, 0)
     last_booking_time = closing_time.replace(hour=closing_time.hour-2, minute=0, second=0, microsecond=0)
 
     if not (opening_time <= value <= closing_time):
@@ -29,7 +29,6 @@ class BookingTableForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number'}),
             'number_of_guests': forms.NumberInput(attrs={'min': 1, 'max': 8}),
             'reservation_date': DatePickerInput(attrs={'class': 'form-control', 'type': 'date'}),
-            # 'reservation_time': TimePickerInput(attrs={'class': 'form-control'}),
             'notes': forms.Textarea(attrs={'rows': 2, 'placeholder': 'Enter any special request'}),
         }
 

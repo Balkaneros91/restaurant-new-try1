@@ -1,9 +1,3 @@
-/* Base.HTML*/
-/* 330 px*/
-
-
-/* Nav-bar */
-
 html,
 body {
   height: 100%;
@@ -11,6 +5,9 @@ body {
   padding: 0;
   background: #d5aeaef5;
 }
+
+
+/* Nav-bar */
 
 .navbar {
   padding: 1px;
@@ -34,8 +31,6 @@ span.navbar-toggler-icon {
 }
 
 a.nav-link {
-  /* margin-top: 8px; */
-  /* when burger opens */
   font-size: 15px;
   line-height: 1;
   color: white;
@@ -49,7 +44,14 @@ a.nav-link {
   z-index: 1030;
 }
 
+
 /* Footer */
+
+footer {
+  width: 100%;
+  bottom: 0px;
+  position: inherit;
+}
 
 .footer a {
   font-size: 18px;
@@ -64,7 +66,6 @@ a.nav-link {
 .copy-right {
   padding-bottom: 5px;
 }
-
 
 
 /* index.HTML*/
@@ -86,7 +87,6 @@ a.nav-link {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.5;
-  background: rgba(215, 177, 177, 0.4);
 }
 
 
@@ -98,8 +98,8 @@ a.nav-link {
 }
 
 .cover_img .img_bg>.container>.row {
-  min-height: 200px;
-  height: 30vh;
+  min-height: 180px;
+  height: 25vh;
 }
 
 
@@ -157,7 +157,6 @@ hr {
 .menu-tab-nav li {
   float: none;
   display: inline-block;
-  /* display: inline; */
   zoom: 1;
 }
 
@@ -418,7 +417,6 @@ p {
 }
 
 
-
 /* POP-up message */
 
 .hide {
@@ -428,8 +426,6 @@ p {
 #msg {
   margin-top: 60px;
 }
-
-
 
 
 /* Contacts page */
@@ -446,7 +442,6 @@ p {
 .contacts strong {
   color: black;
 }
-
 
 
 /* my-bookings page */
@@ -478,6 +473,11 @@ table a {
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
+  color: #008000e8;
+}
+
+.a-delete {
+  color: #c42222d1;
 }
 
 
@@ -514,7 +514,6 @@ table a {
 }
 
 .edit-btn {
-  background-color: white;
   border: 1px solid black;
 }
 
@@ -599,7 +598,6 @@ table a {
 }
 
 
-
 /* SignUp */
 
 .sign-up h1 {
@@ -642,7 +640,6 @@ table a {
   background-color: black;
   border: 1px solid grey;
 }
-
 
 
 /* LogIn */
@@ -713,18 +710,7 @@ table a {
 }
 
 
-
-
-/* $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-); */
-
-
+/* @media queries */
 
 /* Styles for screens with a minimum width of 320px */
 
@@ -733,6 +719,7 @@ table a {
   .cover-text {
     text-align: end;
     margin-top: 5rem;
+    background: rgba(215, 177, 177, 0.4);
   }
 
   .heading {
@@ -746,8 +733,12 @@ table a {
   .home-about p {
     font-size: 12px;
   }
-}
 
+  .cover_img .img_bg>.container>.row {
+    min-height: 200px;
+    height: 35vh;
+  }
+}
 
 /* Styles for screens with a minimum width of 576px */
 
@@ -763,12 +754,11 @@ table a {
   .home-about p {
     font-size: 16px;
   }
-}
 
-
-footer{
-  width: 100%;
-  bottom: 0px;
+  .cover_img .img_bg>.container>.row {
+    min-height: 200px;
+    height: 40vh;
+  }
 }
 
 /* Styles for screens with a minimum width of 768px */
@@ -785,8 +775,12 @@ footer{
   .home-about p {
     font-size: 16px;
   }
-}
 
+  .cover_img .img_bg>.container>.row {
+    min-height: 200px;
+    height: 50vh;
+  }
+}
 
 /* Styles for screens with a minimum width of 992px */
 
@@ -803,20 +797,11 @@ footer{
     font-size: 18px;
   }
 
-  .cover_img .img_bg>.container>.row {
-    min-height: 200px;
-    /* height: 50vh; */
-  }
-
   .cover-text {
     text-align: end;
     /* margin-left: 21rem; */
   }
 }
-
-
-
-
 
 /* Styles for screens with a minimum width of 1200px */
 
@@ -834,7 +819,6 @@ footer{
   }
 }
 
-
 /* Styles for screens with a minimum width of 1400px */
 
 @media (min-width: 1400px) {
@@ -850,86 +834,3 @@ footer{
     font-size: 18px;
   }
 }
-
-
-
-
-/* @media queries */
-
-@media (min-width: 320px) {
-
-  .container,
-  .container-sm,
-  .container-xs {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 576px) {
-
-  .container,
-  .container-sm {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
-  }
-}
-
-
-
-/* contacts.html p strong*/
-/* adjust the width as needed */
-/* .label {
-  display: inline-block;
-  width: 100px;
-  text-align: right;
-  margin-right: 10px;
-} */
-
-
-
-/* <style>
-html, body {
-  height: 100%;
-}
-
-.content {
-  min-height: calc(100% - (height of footer));
-  Add any padding/margin you want
-}
-
-footer {
-  height: (height of footer);
-  position: sticky;
-  bottom: 0;
-  Add any padding/margin you want
-}
-</style> */

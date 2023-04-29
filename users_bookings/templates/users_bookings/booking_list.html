@@ -20,7 +20,7 @@
 
 <div class="container bookings">
   <div class="row justify-content-center">
-    <div class="col-sm-10 col-md-10 col-lg-8 col-xl-8 p-4">
+    <div class="col-12 col-md-10 col-lg-8 p-4">
       <h1>My Bookings</h1>
 
       {% if bookings %}
@@ -57,7 +57,7 @@
             <td></td>
             <td>
               <a href="{% url 'booking_edit' pk=booking.pk %}">Edit</a> |
-              <a href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
+              <a class="a-delete" href="{% url 'booking_delete' pk=booking.pk %}">Delete</a>
             </td>
           </tr>
           {% endfor %}
