@@ -532,10 +532,10 @@ table a {
   border: 1px solid grey;
 }
 
-.cancel-btn {
+.edit-cancel-btn {
   font-size: 12px;
   border: 1px solid black;
-  background: floralwhite;
+  background: white;
 }
 
 .cancel-btn a {
@@ -545,7 +545,7 @@ table a {
 }
 
 .cancel-btn a:hover,
-.cancel-btn:hover {
+.edit-cancel-btn:hover {
   color: white;
   background-color: black;
 }
@@ -591,6 +591,17 @@ table a {
   color: white;
   background-color: black;
   border: 1px solid grey;
+}
+
+.delete-cancel-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.delete-cancel-btn {
+  font-size: 12px;
+  border: 1px solid black;
+  background: floralwhite;
 }
 
 
