@@ -58,10 +58,9 @@
             <div class="text">
               <h3><a href="{% url 'menu:meal_details' meal.slug %}">{{ meal.name }}</a></h3>
               <p>{{ meal.description|truncatewords:20 }}</p>
+              <p class="price"><strong>SEK {{ meal.price }}</strong></p>
             </div>
-            <div class="price">
-              <strong>SEK {{ meal.price }}</strong>
-            </div>
+
           </div>
           {% endif %}
           {% empty %}
