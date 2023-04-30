@@ -1,5 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+import re
 from .models import Booking
 from .widget import DatePickerInput, TimePickerInput
 from django.utils import timezone
@@ -44,3 +46,18 @@ class BookingTableForm(forms.ModelForm):
                 raise ValidationError('Sorry, we cannot accommodate parties larger than 8 guests')
 
             return number_of_guests
+
+        def clean_email(self):
+            email = self.cleaned_data.get('email')
+            if not email:
+                raise forms.ValidationError('Please enter your email address')
+            try:
+                validate_email(email)
+            except forms.ValidationError:
+                raise forms.ValidationError('Please enter a valid email address')
+
+            # Check if email address has a valid format
+            if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+                raise forms.ValidationError('Please enter a valid email address')
+
+            return email
