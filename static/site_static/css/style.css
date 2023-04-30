@@ -58,6 +58,10 @@ footer {
   padding-bottom: 5px;
 }
 
+.footer i:hover {
+  color: #ec9494f5;
+}
+
 .footer p {
   font-size: 11px;
   line-height: 0.5;
@@ -88,7 +92,6 @@ footer {
   font-size: 20px;
   line-height: 1.5;
 }
-
 
 .sub-heading {
   color: white;
@@ -133,7 +136,7 @@ hr {
 /* Home Menu*/
 
 .home-menu {
-  background-color: white;
+  background-color: floralwhite;
 }
 
 .home-menu h2 {
@@ -279,6 +282,7 @@ hr {
 .categories a {
   font-size: 12px;
   font-weight: 600;
+  background: floralwhite;
 }
 
 .categories a:hover {
@@ -301,6 +305,7 @@ hr {
 
 .card-body {
   font-size: 12px;
+  background: floralwhite;
 }
 
 .menu h5>a {
@@ -330,8 +335,8 @@ hr {
 
 .no-border {
   width: 18rem;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid grey;
+  border-radius: 0px;
 }
 
 .details h5 {
@@ -458,6 +463,10 @@ thead {
   line-height: 1.2;
 }
 
+table {
+  background: floralwhite;
+}
+
 table th {
   font-size: 12px;
   font-weight: 600;
@@ -514,6 +523,7 @@ table a {
 
 .edit-btn {
   border: 1px solid black;
+  background: white;
 }
 
 .edit-btn:hover {
@@ -525,6 +535,7 @@ table a {
 .cancel-btn {
   font-size: 12px;
   border: 1px solid black;
+  background: floralwhite;
 }
 
 .cancel-btn a {
@@ -541,6 +552,10 @@ table a {
 
 
 /* Delete booking */
+
+.card {
+  background: floralwhite;
+}
 
 .delete h1 {
   font-size: 20px;
@@ -569,7 +584,6 @@ table a {
 .delete-btn {
   font-size: 12px;
   font-weight: 400;
-  background-color: white;
   border: 1px solid black;
 }
 
@@ -577,23 +591,6 @@ table a {
   color: white;
   background-color: black;
   border: 1px solid grey;
-}
-
-.cancel-btn {
-  font-size: 12px;
-  border: 1px solid black;
-}
-
-.cancel-btn a {
-  font-size: 10px;
-  text-decoration: none;
-  color: black;
-}
-
-.cancel-btn a:hover,
-.cancel-btn:hover {
-  color: white;
-  background-color: black;
 }
 
 
@@ -737,6 +734,14 @@ table a {
     min-height: 200px;
     height: 35vh;
   }
+
+  .contacts h2 {
+    font-size: 15px;
+  }
+
+  .contacts p {
+    font-size: 11px;
+  }
 }
 
 /* Styles for screens with a minimum width of 576px */
@@ -757,6 +762,14 @@ table a {
   .cover_img .img_bg>.container>.row {
     min-height: 200px;
     height: 40vh;
+  }
+
+  .contacts h2 {
+    font-size: 15px;
+  }
+
+  .contacts p {
+    font-size: 11px;
   }
 
   th,
@@ -783,6 +796,14 @@ table a {
   .cover_img .img_bg>.container>.row {
     min-height: 200px;
     height: 50vh;
+  }
+
+  .contacts h2 {
+    font-size: 16px;
+  }
+
+  .contacts p {
+    font-size: 12px;
   }
 
   .bookings h1 {
@@ -819,6 +840,15 @@ table a {
     text-align: end;
     /* margin-left: 21rem; */
   }
+
+  .contacts h2 {
+    font-size: 17px;
+  }
+
+  .contacts p {
+    font-size: 13px;
+  }
+
 }
 
 /* Styles for screens with a minimum width of 1200px */
