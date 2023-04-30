@@ -26,7 +26,7 @@ class BookingTableForm(forms.ModelForm):
         model = Booking
         fields = ('name', 'email', 'phone', 'number_of_guests', 'reservation_date', 'reservation_time', 'notes')
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Enter your name'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your name', 'required': True}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your email'}),
             'phone': forms.TextInput(attrs={'placeholder': 'Enter your phone number'}),
             'number_of_guests': forms.NumberInput(attrs={'min': 1, 'max': 8}),
@@ -61,3 +61,9 @@ class BookingTableForm(forms.ModelForm):
                 raise forms.ValidationError('Please enter a valid email address')
 
             return email
+
+        def clean_name(self):
+            name = self.cleaned_data.get('name')
+            if not name:
+                raise forms.ValidationError('Please enter your name')
+            return name
