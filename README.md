@@ -1,8 +1,8 @@
-# Sea Side Restaurant
+# Restaurant Cubaneros
 
 ## [Sea Side](https://seaside-rest.herokuapp.com/)
 
-<img src="readme-images/responsive.png">
+<img src="readme_img/amiresponsive.png">
 
 <br>
 
@@ -13,7 +13,7 @@ The site also has a menu page where Admin can add, edit, or delete menu items fo
 <ul>
 Technologies and libraries used:
 <li>Python</li>
-<li>Django.</li>
+<li>Django</li>
 <li>Bootstrap</li>
 <li>HTML/CSS</li>
 <li>JavaScript</li>
