@@ -5,11 +5,11 @@ My project is a restaurant website which represents a traditional rustic cuban c
 
 <hr>
 
-[Live Website] (https://pp4.herokuapp.com/)
+The live deployed application can be found deployed on [Heroku](https://tribe.herokuapp.com).
 
-Github Repository (https://github.com/eleanorbucke21/PP4)
+The link to my Github repository's [Github Repo](https://github.com/eleanorbucke21/PP4).
 
-<br>
+<hr>
 
 ## CONTENTS
 
@@ -20,13 +20,11 @@ Github Repository (https://github.com/eleanorbucke21/PP4)
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
-  * [Imagery](#imagery)
   * [Wireframes](#wireframes)
 
 * [Features](#features)
   * [General Features on Each Page](#general-features-on-each-page)
   * [Future Implementations](#future-implementations)
-  * [Accessibility](#accessibility)
 
 * [Technologies Used](#technologies-used)
   * [Languages Used](#languages-used)
@@ -34,9 +32,13 @@ Github Repository (https://github.com/eleanorbucke21/PP4)
 
 * [Deployment & Local Development](#deployment--local-development)
   * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
+  * [ElephantSQL databse](#elephantsql-database)
+  * [Cloudinary API](#cloudinary-api)
+  * [Heroku deployment](#heroku-deployment)
+  * [Local deployment](#local-deployment)
+    * [Cloning](#cloning)
+    * [Forking](#forking)
+
 
 * [Testing](#testing)
 
@@ -51,11 +53,9 @@ Github Repository (https://github.com/eleanorbucke21/PP4)
 
 ## User Experience (UX)
 
-Visitors looking for a safe place to share their stories and a good laugh should find this website interesting and charming. We are a charitable organization with a goal of sharing information and helping people to get the answers they are looking for or in case  they need even further help pointing them towards the right direction.  
+Users visiting the restaurants website are looking for a new place to explore. We are offering a real rustic traditional experiance to excape the luxuary fancy vibe but still a place to fine dine. 
 
-The front page provides the visitor with a short introduction and the events contact and info. Besides that they can visit webites gallery full with lgbtq+ related sharing and caring photos. 
-
-In case you wanna have some fun and share your story proceed to our sign up page. 
+The front page provides the user with all the necessary content so they could decide if that is the place they want to explore. If not authenticated they can access almost all the content of the page until it gets to the reservation part of it, for which authentication is required.
 
 Everyone can enjoy their visit to our website because we have adjusted it and designed for all different screen sizes.
 
@@ -65,13 +65,16 @@ The project is build using the agile methodology. Link to the project board: [he
 
 ### User Stories
 
-User stories
+I have created user stories based on the agile methodology and I have created them using the Githubs kanban. In the upcoming images the projects build-up process can be followed up throughout different stages.
 
-![Stage-1](readme_img/kanban/mobile_main.png)
-![Stage-2](readme_img/kanban/mobile_main.png)
-![Stage-3](readme_img/kanban/mobile_main.png)
-![Stage-4](readme_img/kanban/mobile_main.png)
+![Stage-1](readme_img/kanban/kanban_1.png)
+![Stage-2](readme_img/kanban/kanban_2.png)
+![Stage-3](readme_img/kanban/kanban_3.png)
+![Stage-4](readme_img/kanban/kanban_4.png)
+![Stage-4](readme_img/kanban/kanban_5.png)
 ![Stage-5](readme_img/kanban/kanban_done.png)
+
+<hr>
 
 ## Design
 
@@ -87,9 +90,11 @@ I wanted to keep it simple and light. The color palette matches the cover image 
 
 After I have applied the bootstrap CND I really liked the font style which came along with it and so I decided to just stick to it.
 
-## <strong>Wireframes</strong>
+<hr>
 
-[Balsamiq](https://balsamiq.com/wireframes) used for wireframe design.
+## Wireframes
+
+[Balsamiq](https://balsamiq.com/wireframes) is used for wireframe design.
 
 ### Restaurant's Home Page
 
@@ -280,7 +285,7 @@ After I have applied the bootstrap CND I really liked the font style which came 
 
 ## Features
 
-My website is built of 3 pages, index.html as a home page, gallery.html as the gallery page, and signup.html as the sign up page. 
+My website includes the base.html and the rest of the pages are build using templating. 
 
 ### Final look of the Home page
 ![Home Page](readme_img/features/home_1.png)
@@ -342,19 +347,9 @@ The navigation menu and footer is continiously the same throughout all the pages
 
 ### Future Implementations
 
-This page has a potential to grow bigger. There is a playground for a lots of future implementations.
+This page has a potential to grow bigger. There is open space for many possible future implementations, like email automation, adding tables and available time slots to the booking form and so on.
 
-### Accessibility
-
-I have  have tried my best to be mindful of accessibility, and the steps I've taken for this are the following:
-
-- Semantic HTML
-- All the links has their aria-labels
-- The color choices and the backgroud images doesn't disturb the content
-- All images under the gallery site are informativly described 
-
-
-
+<hr>
 
 ## Technologies Used
 
@@ -378,25 +373,11 @@ I have  have tried my best to be mindful of accessibility, and the steps I've ta
 <li>Balsamic</li>
 </ul>
 
+<hr>
 
 ## Deployment & Local Development
 
 ### Deployment
-
-[View live site on Github Pages](https://balkaneros91.github.io/whatsss-the-tea/)
-
-### Local Development
-
-If you wish to clone my project, please see the following steps below:
-
-1. Navigate to Github: https://balkaneros91.github.io/whatsss-the-tea/
-2. Select the 'Clone' button 
-3. Copy the url or download as ZIP file
-4. Use git clone + the url in your terminal, or unpack the ZIP containing the project
-
-"""
-"""
-## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://tribe.herokuapp.com).
 
@@ -529,17 +510,40 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/adamgilroy22/tribe)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
-"""
-"""
-
 
 ## Testing
 
-All the links in the navigation bar and in the footer has been tested and works. The logo link always brings us back to the main page, while the About and Contact links are only index.html local links so avoid scrolling up and down on the page. The rest as Gallery and Sign Up links opens a new tab in the browser for easier navigation between pages. And the deployed website has been tested in Chrome, Safari, Internet Explorer (Opera) and Firefox. Media queries looks good and been tested throughout different screen sizes.
+All the links in the navigation bar and in the footer has been tested and works. The logo link always brings us back to the main page,
 
-I have used Responsinator.com for testing:
+while the About and Contact links are only index.html local links so avoid scrolling up and down on the page. The rest as Gallery and Sign Up links opens a new tab in the browser for easier navigation between pages. And the deployed website has been tested in Chrome, Safari, Internet Explorer (Opera) and Firefox. Media queries looks good and been tested throughout different screen sizes.
+
+<hr>
+
+<ul>Manual Testing:
+<li>Booking data model tested: all of its CRUD functionality for the admin and users</li>
+<li>Tested confirm bookings by admin.</li>
+<li>Menu data model tested: create and read functionality for admin, and only view for users</li>
+<li>Announcements data model: tested create and read functionality for the admin and only view for users</li>
+<li>Sign-up/ Sign-in forms and links all tested to confirm working as intended</li>
+<li>Tested Booking page links and all its functionality</li>
+<li>Tested User Authorisations to ensure role-based functions such as Booking page access, edit or deleting bookings</li>
+</ul>
+
+Browser Compatibility:
+
+Browser | Pass/Fail 
+ --- | --- | ---
+Google Chrome | Pass
+Safari | Pass
+Microsoft Edge | Pass
+Firefox | Pass
+
+### Responsiveness
+
+I used both of these to check the responsivness across different screen sizes.
+
+- [Am I Responsive?](http://ami.responsivedesign.is/#) 
 - [Responsinator](http://www.responsinator.com/)
-
 
 ### Lighthouse
 
@@ -548,21 +552,61 @@ For mobile:
 For desktop: 
 ![Lighthouse](assets/readme/lighthouse-desktop.png)
 
+### <u>Lighthouse</u>
+|Page | Mobile  | Computer|
+| ------------- | ------------- |------------- |
+| Index | <img src="markdown/Mindex.png" width="250">| <img src="markdown/cindex.png" width="250">
+| Register |<img src="markdown/mregister.png" width="250">| <img src="markdown/cregister.png" width="250">
+|
+
 ### W3C HTML Validator
 ![W3C HTML Validator](assets/readme/w3c-markup-validation.png)
 
 ### W3C CSS Validator
 ![W3C CSS Validator](assets/readme/w3c-css-validation.png)
 
+### W3C CSS Validator
+No errors were recieved on the pages. <br>
+<img src="markdown/css.png" width="400">
+
+### W3C Markup Validation Serice
+No errors were recieved on the pages except for the post detail page which recieved one error.
+|Error |Error explanation| Code |
+| ------------- | ------------- |------------- |
+| <img src="markdown/error.png" width="400"> | <img src="markdown/errorexplain.png" width="400"> |<img src="markdown/errorcode.png" width="400">|
+
+### JShint
+I did not perform any validation on javascript as all the javascript was imported in from [clean blog](https://github.com/StartBootstrap/startbootstrap-clean-blog).
+
+### Code Institute Python Linter
+
+- bawarchikhana/settings.py <br>
+<img src="markdown/bawarchikhana-settings-py.png" width="250">
+
+- bawarchikhana/urls.py <br>
+<img src="markdown/bawarchikhana-urls-py.png" width="250">
+
+- blog/admin.py , blog/forms.py, blog/models.py, blog/views.py.<br>
+<img src="markdown/blog-admin-forms-models-views.png" width="250">
+
+- blog/urls.py. <br>
+<img src="markdown/blog-urls.png" width="250">
+
+## Testing
+- [W3C Markup Validation Serice](https://validator.w3.org/) was used to test for error codes in the HTML.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)  was used to test for error codes in the CSS.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) was used to detect errors and potential problems in Python code.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    was used during the development process to test, debug, explore and modify HTML elements, and to test responsiveness in different screen sizes.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used for improving the quality of web page. It has audits for performance, accessibility, progressive web apps, SEO, and more.
+
 ### Known bugs
 
 No known bugs detected
 
+- The navigation bar continues to move around the screen even with it being set to absolute. I have been unable to solve the issue. 
+
 ### Solved Bugs
-
-I came accross many issues and bugs while creating this project. Understanding of flexbox didn't really workout. During the 2nd mentor meeting Antonio Rodriguez introduced me and explained the grid view which saved my first project. I needed a lot of playing around, moving code back and forward until it really settled in my head.
-
-He mentioned that it would be good to add a comment that due to changes and extra time I needed to put all the code together I had to create a new repository and that is why all the commits came in within few hours because I had to migrate everything from one repo to a new one.
 
 Some of the bugs I came accross and fixed: 
 
@@ -584,152 +628,44 @@ Some of the bugs I came accross and fixed:
   + Actual behaviour: Footer vertical positioning on small screen
   + Fix: Adding the correct class attribute col-s-4.
 
-"""
-"""
-## Testing
-<hr>
-<ul>Manual Testing:
-<li>Booking data model tested: all of its CRUD functionality for the admin and users</li>
-<li>Tested confirm bookings by admin.</li>
-<li>Menu data model tested: create and read functionality for admin, and only view for users</li>
-<li>Announcements data model: tested create and read functionality for the admin and only view for users</li>
-<li>Sign-up/ Sign-in forms and links all tested to confirm working as intended</li>
-<li>Tested Booking page links and all its functionality</li>
-<li>Tested User Authorisations to ensure role-based functions such as Booking page access, edit or deleting bookings</li>
-</ul>
-
-## <strong>Testing</strong>
-- [W3C Markup Validation Serice](https://validator.w3.org/) was used to test for error codes in the HTML.
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)  was used to test for error codes in the CSS.
-- [CI Python Linter](https://pep8ci.herokuapp.com/) was used to detect errors and potential problems in Python code.
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-    was used during the development process to test, debug, explore and modify HTML elements, and to test responsiveness in different screen sizes.
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used for improving the quality of web page. It has audits for performance, accessibility, progressive web apps, SEO, and more.
-
-
-### <u>Website validation testing</u>
-
-### <u>JShint</u>
-I did not perform any validation on javascript as all the javascript was imported in from [clean blog](https://github.com/StartBootstrap/startbootstrap-clean-blog).
-
-### <u>W3C Markup Validation Serice</u>
-No errors were recieved on the pages except for the post detail page which recieved one error.
-|Error |Error explanation| Code |
-| ------------- | ------------- |------------- |
-| <img src="markdown/error.png" width="400"> | <img src="markdown/errorexplain.png" width="400"> |<img src="markdown/errorcode.png" width="400">|
-
-### <u>W3C CSS Validator</u>
-No errors were recieved on the pages. <br>
-<img src="markdown/css.png" width="400">
-
-
-### <u>Code Institute Python Linter</u>
-
-- bawarchikhana/settings.py <br>
-<img src="markdown/bawarchikhana-settings-py.png" width="250">
-
-- bawarchikhana/urls.py <br>
-<img src="markdown/bawarchikhana-urls-py.png" width="250">
-
-- blog/admin.py , blog/forms.py, blog/models.py, blog/views.py.<br>
-<img src="markdown/blog-admin-forms-models-views.png" width="250">
-
-- blog/urls.py. <br>
-<img src="markdown/blog-urls.png" width="250">
-
-
-### <u>Lighthouse</u>
-|Page | Mobile  | Computer|
-| ------------- | ------------- |------------- |
-| Index | <img src="markdown/Mindex.png" width="250">| <img src="markdown/cindex.png" width="250">
-| Register |<img src="markdown/mregister.png" width="250">| <img src="markdown/cregister.png" width="250">
-|
-
-
-### <u>Manual Testing</u>
-Browser Compatibility:
-
-Browser | Outcome | Pass/Fail 
- --- | --- | ---
-Google Chrome | No appearance, responsiveness nor functionality issues.| Pass
-Safari | No appearance, responsiveness nor functionality issues. | Pass
-Microsoft Edge | No appearance, responsiveness nor functionality issues. | Pass
-Firefox | No appearance, responsiveness nor functionality issues. | Pass
-
-
-## <strong>Bugs</strong>
-
-### <u>Unsolved Bugs</u>
-- The navigation bar continues to move around the screen even with it being set to absolute. I have been unable to solve the issue. 
-
-### <u>Solved Bugs</u>
+  ### Solved Bugs
 - When adding success messages I found that there was a bug on the DeletePost view.
 - With this view I had to add different code than the others to correct it.
 - I corrected this by adding this code from [stack overflow](https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview)
 
 <img src="markdown/DeleteBug.png">
 
-
-### Validator Testing
-<ul>
-<li>All Python code ran through PEOP8 checker succesfully without any problem.</li>
-
-<li>All CSS files ran through CSS jigsaw validator with no errors</li>
-
-[CSS JIGSAW](https://jigsaw.w3.org/css-validator/) passed with no erros.
-<img src="readme-images/css-jigsaw.png">
-
-<li>All HTML files ran through W3C validator with no errors</li>
-
-[HTML W3C validator](https://validator.w3.org/)
-</ul>
-
 <hr>
-"""
-"""
 
 ## Credits
 
-Code Institue projects: Coders Coffehouse and Love Running has been the inspiration for my websites design.
-The help I've used with syntax and formatting, please see links and description below.
+Code Institue projects: 'Hello Django' and 'I think therefore I blog' has helped me a lot during the project planning for my websites design.
+Extra help I've used for this project, please see links below.
 
 ### Code Used
 
 - [w3schools](https://www.w3schools.com/)
-- [How to position text above an image](https://www.w3schools.com/HOWTO/howto_css_image_text.asp)
+- [Stack Overflow](https://stackoverflow.com/)
 - [CSS Media Queries](https://www.w3schools.com/css/css3_mediaqueries.asp)
 - [Grid-View](https://www.w3schools.com/css/css_rwd_grid.asp)
 - [emmet.io](https://docs.emmet.io/cheat-sheet/)
 
+- [Start Bootstrap](https://startbootstrap.com/theme/clean-blog)
+- [Django documentation](https://docs.djangoproject.com/en/3.2/)
 
 ### Content
 
-The code is mostly created by me and I was inspired by the traditional cuban cuisine.
+- The code is mostly created by me and I was inspired by the traditional cuban cuisine.
+
+- For the deployment section I got expired by my colleague here at CI,Adam Gilroy.
 
 ###  Media
 
-- [Favicon](https://favicon.io/emoji-favicons/curry-rice/) The curry and Rice emoji. <br>
+- [Favicon](https://favicon.io/emoji-favicons/fork-and-knife/) The fork and knife emoji. <br>
 <img src="static/site_static/favicon_io1/favicon.ico">
 
-All the other images are downloaded from online only for purposes of this project.
+All images are downloaded from internet and used only for purposes of this project.
   
 ###  Acknowledgments
 
-And last but not least a big thanks to my mentor Antonio Rodriguez and to the CI tutor team who help a lot during the process.
-
-This project tested me to my limits at times and I could not have seen it to completion without the support of the following people.
-- 
-- 
-
-Recived help from Daniel_c_5p on slack in :
-<ul>
-<li>restrict booking views to the user that owns the booking</li>
-<li>Help with menu view function to view menu items in 4 seperate categories</li>
-</ul>
-
-Code institute tutor support helped me get back on track on several occasions when I had errors or any problems throughout the project.
-
-
-
-## Responsiveness
-[Am I Responsive?](http://ami.responsivedesign.is/#) used for check responsiveness of the site pages across different screen sizes.
+- And last but not least a big thanks to my mentor Antonio Rodriguez and to the CI tutor support who help a few times during the process.
