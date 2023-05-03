@@ -50,7 +50,7 @@ The link to my Github repository's [Github Repo](https://github.com/Balkaneros91
   * [JIGSAW W3C CSS Validator](#jigsaw-w3c-css-validator)
   * [JShint](#jshint)
   * [Code Institute Python Linter](#code-institute-python-linter)
-  * [Chrome DevTools](#chrome-devTools)
+  * [Chrome DevTools](#chrome-devtools)
   * [Known bugs](#known-bugs)
   * [Solved bugs](#solved-bugs)
 
@@ -494,6 +494,7 @@ My website includes the base.html and the rest of the pages are build using temp
 
 ![Booking success messages](readme_img/success_message/booking_success_message.png)
 ![Sign in success messages](readme_img/success_message/sign_in_success_message.png)
+![Sign in success messages](readme_img/success_message/delete_success_message.png)
 
 </details>
 
