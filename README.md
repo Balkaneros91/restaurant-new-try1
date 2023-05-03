@@ -778,29 +778,16 @@ I did not perform any validation on javascript as all the javascript was importe
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
     played a big role in projects development. I used it for testing, debugging. Further more for exploring around and helping myself to fix HTML and CSS difficulties with it. It help me a lot with setting the responsiveness accross different screen sizes.
 
-
-
-
-
 ### Known bugs
 
-- On some pages there I don't have enough content the footer does not stick to the bottom and I wasn't able to figure out the fix for that.
+- On some pages there I don't have enough content the footer does not stick to the bottom and I wasn't able to figure out the fix for that. If I remove the absolute and add the inherit css property than the footer covers some of the content. But will deffinitely look into this in the future.
 - Other than that not aware of any other bug. 
 
 ### Solved Bugs
 
-Some of the bugs I came accross and fixed: 
+- Creating the booking form I hadf some issues when it comes to the validation of opening and closing times of the restaurant but with mentors guidance I got those resolved and the same applies for email address validation.
 
-+ Background images
-  + Description: Diffrent size throughout differet screen sizes
-  + Expected behaviour: Full image with no missing sides all the time covering its own content
-  + Actual behaviour: The image was too small or too big or missing a part of it
-  + Fix: Add code background-size: 100%; or background-size: cover; plus adjusting the media queries
-
-
-
-
-  
+- I could not place correctly the booking list and position it so that it fits even on a xs screens, but later it got resolved once I realized that bootstrap has the table class which has a built-in feature so the user can scroll back and forward (right-left).
 
 <hr>
 
