@@ -1,7 +1,8 @@
 # Restaurant Cubaneros 
 ![mockup](readme_img/amiresponsive.png)
 
-A Pakistani recipe blog. Bawarchi khana means kitchen in Urdu. This website is deigned to showcase pakistani recipes that can be added by either admin or by a user who has registered to the website. Each user has the ability to like and dislike a recipe post. If the user is also the author of the recipe post they have the option to delete or edit the post. As admin for this blog, they have the option to approve or deny all posts and comments to be published on the website.
+My project is a restaurant website which represents a traditional rustic cuban cuisine. The websites main features, as 'about', 'menu', contacts' displays the 'read' part of CRUD to the user and gives the important information about the websites goal to the user, while the admin can change and update the same information from the backend. The crucial part of the project is the 'book here!'(or the booking form) and 'my bookings' which gives the user/admin the possibility for 'create', 'update' and 'delete' in CRUD, so that a reservation/booking can be created, edited or removed. As admin these bookings can be approved or rejected and the status of this action reflects in the frontend presentation, which gives the user the possibility to follow up the status themselves.
+
 <hr>
 
 [Live Website] (https://pp4.herokuapp.com/)
@@ -60,19 +61,23 @@ Everyone can enjoy their visit to our website because we have adjusted it and de
 
 ### Agile
 
-I implemented agile methodology when creating this website. The link to the project board can be found [here](https://github.com/users/Balkaneros91/projects/13/views/1)
+The project is build using the agile methodology. Link to the project board: [here](https://github.com/users/Balkaneros91/projects/13/views/1)
 
 ### User Stories
 
-If you visit my website for the very first time I want you to feel welcome and curious. With the funny but still confusing logo I want you to get intrigued and scroll further down to read about us and to get the clear understanding of who we are and what we do.
+User stories
 
-In case the home page drawn you attention there is more to see on the following gallery page and for more information feel free to contact us or use or sign up form.
+![Stage-1](readme_img/kanban/mobile_main.png)
+![Stage-2](readme_img/kanban/mobile_main.png)
+![Stage-3](readme_img/kanban/mobile_main.png)
+![Stage-4](readme_img/kanban/mobile_main.png)
+![Stage-5](readme_img/kanban/kanban_done.png)
 
 ## Design
 
 ### Colour Scheme
 
-I wanted my page to be colorful but in a appropriate way so I fetched as friendly as possible for eyes color palette based off of the hero image, which I thought would be a well suited color scheme for the full website. 
+I wanted to keep it simple and light. The color palette matches the cover image and is well suited color scheme for the full website.
 
 [Coolors.co](https://coolors.co/) was the website I've used to fetch the colour palette presented.
 
@@ -80,16 +85,7 @@ I wanted my page to be colorful but in a appropriate way so I fetched as friendl
 
 ### Typography
 
-It was hard to find a perfectly matching fonts, and now I sound totally like a beginner, which looked good and readable. Finally I picked Great Vibes, Acme and for the rest I thought it looks the best with sans-serif.
-
-I used Great Vibes to decorate the website logo, then I used Acme for the quotation and the main sections title and for the rest I left it on sans-serif since that suited the paragraphs best.
-
-![Typography](assets/readme/great-vibes-font.png)
-![Typography](assets/readme/acme-font.png)
-
-### Imagery
-
-Since the organization is all about the lgbtq+ and rainbow I thought that pictures related to that would perfectly fullfill the pages value and message.
+After I have applied the bootstrap CND I really liked the font style which came along with it and so I decided to just stick to it.
 
 ## <strong>Wireframes</strong>
 
