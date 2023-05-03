@@ -5,9 +5,9 @@ My project is a restaurant website which represents a traditional rustic cuban c
 
 <hr>
 
-The live deployed application can be found deployed on [Heroku](https://tribe.herokuapp.com).
+The live deployed application can be found deployed on [Heroku]().
 
-The link to my Github repository's [Github Repo](https://github.com/eleanorbucke21/PP4).
+The link to my Github repository's [Github Repo](https://github.com/Balkaneros91/Cubaneros-PP4).
 
 <hr>
 
@@ -535,7 +535,7 @@ This page has a potential to grow bigger. There is open space for many possible 
 
 ### Deployment
 
-The live deployed application can be found deployed on [Heroku](https://tribe.herokuapp.com).
+The live deployed application can be found deployed on [Heroku]().
 
 
 ### ElephantSQL Database
@@ -642,28 +642,21 @@ Once the project is cloned or forked, in order to run it locally, you'll need to
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/adamgilroy22/tribe) 
+1. Go to the [GitHub repository](https://github.com/Balkaneros91/Cubaneros-PP4) 
 2. Locate the Code button above the list of files and click it 
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/adamgilroy22/tribe.git`
+	- `git clone https://github.com/Balkaneros91/Cubaneros-PP4.git`
 7. Press Enter to create your local clone.
-
-Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/adamgilroy22/tribe)
-
-Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
-A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
 ### Forking
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/adamgilroy22/tribe)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Balkaneros91/Cubaneros-PP4)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
@@ -692,6 +685,8 @@ I used both of these to check the responsivness across different screen sizes.
 <li>Booking form tested and all its functionality and validations works.</li>
 <li>Authorisations tested based on the different accesses so that role-based functions such as Booking form access, edit or deleting bookings can be accessed just if the person is permitted.</li>
 </ul>
+
+<hr>
 
 ### Browser Compatibility:
 
@@ -760,25 +755,31 @@ Firefox | Pass
 
 ### JShint
 I did not perform any validation on javascript as all the javascript was imported in from [clean blog](https://github.com/StartBootstrap/startbootstrap-clean-blog).
+![JShint Validator](readme_img/css_w3c_validatio.png)
+
 
 ### Code Institute Python Linter
 - [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate Python code.
 
-- bawarchikhana/settings.py <br>
-<img src="markdown/bawarchikhana-settings-py.png" width="250">
+- cubaneros/settings.py <br>
+![Linter Validator](readme_img/css_w3c_validatio.png)
 
-- bawarchikhana/urls.py <br>
-<img src="markdown/bawarchikhana-urls-py.png" width="250">
+- cubaneros/urls.py <br>
+![Linter Validator](readme_img/css_w3c_validatio.png)
 
 - blog/admin.py , blog/forms.py, blog/models.py, blog/views.py.<br>
-<img src="markdown/blog-admin-forms-models-views.png" width="250">
+![Linter Validator](readme_img/css_w3c_validatio.png)
 
 - blog/urls.py. <br>
-<img src="markdown/blog-urls.png" width="250">
+![Linter Validator](readme_img/css_w3c_validatio.png)
 
 ### Chrome DevTools
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
     played a big role in projects development. I used it for testing, debugging. Further more for exploring around and helping myself to fix HTML and CSS difficulties with it. It help me a lot with setting the responsiveness accross different screen sizes.
+
+
+
+
 
 ### Known bugs
 
@@ -794,6 +795,11 @@ Some of the bugs I came accross and fixed:
   + Expected behaviour: Full image with no missing sides all the time covering its own content
   + Actual behaviour: The image was too small or too big or missing a part of it
   + Fix: Add code background-size: 100%; or background-size: cover; plus adjusting the media queries
+
+
+
+
+  
 
 <hr>
 
