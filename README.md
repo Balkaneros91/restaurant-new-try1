@@ -41,6 +41,7 @@ The link to my Github repository's [Github Repo](https://github.com/eleanorbucke
 
 
 * [Testing](#testing)
+  * [Lighthouse](#lighthouse)
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -545,19 +546,41 @@ I used both of these to check the responsivness across different screen sizes.
 - [Am I Responsive?](http://ami.responsivedesign.is/#) 
 - [Responsinator](http://www.responsinator.com/)
 
-### Lighthouse
+## Lighthouse
 
-For mobile: 
-![Lighthouse](assets/readme/lighthouse-mobile.png)
-For desktop: 
-![Lighthouse](assets/readme/lighthouse-desktop.png)
+### Lighthouse Mobile Views
 
-### <u>Lighthouse</u>
-|Page | Mobile  | Computer|
-| ------------- | ------------- |------------- |
-| Index | <img src="markdown/Mindex.png" width="250">| <img src="markdown/cindex.png" width="250">
-| Register |<img src="markdown/mregister.png" width="250">| <img src="markdown/cregister.png" width="250">
-|
+![Lighthouse](readme_img/lighthouse/lighthouse_mobile_home.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_about_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_menu_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_meal_detail_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_booking_form_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_booking_confirmation_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_booking_confirmation_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_contacts_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_bookings_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_edit_booking_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_delete_booking_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_out_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_up_mobile.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_in_mobile.png)
+
+### Lighthouse Desktop Views
+
+![Lighthouse](readme_img/lighthouse/lighthouse_desktop_home.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_about_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_menu_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_meal_detail_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_booking_form_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_booking_confirmation_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_contacts_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_bookings_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_edit_booking_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_delete_booking_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_out_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_up_desktop.png)
+![Lighthouse](readme_img/lighthouse/lighthouse_sign_in_desktop.png)
+
 
 ### W3C HTML Validator
 ![W3C HTML Validator](assets/readme/w3c-markup-validation.png)
