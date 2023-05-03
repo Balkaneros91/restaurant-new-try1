@@ -16,6 +16,7 @@ The link to my Github repository's [Github Repo](https://github.com/eleanorbucke
 * [User Experience](#user-experience-ux)
   * [Agile](#agile)
   * [User Stories](#user-stories)
+  * [Project stages](#project-stages)
 
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
@@ -41,7 +42,17 @@ The link to my Github repository's [Github Repo](https://github.com/eleanorbucke
 
 
 * [Testing](#testing)
+  * [Responsiveness](#responsiveness)
+  * [Manual testing](#manual-testing)
+  * [Browser Compatibility](#browser-compatibility)
   * [Lighthouse](#lighthouse)
+  * [W3C HTML Validator](#w3c-html-validator)
+  * [JIGSAW W3C CSS Validator](#jigsaw-w3c-css-validator)
+  * [JShint](#jshint)
+  * [Code Institute Python Linter](#code-institute-python-linter)
+  * [Chrome DevTools](#chrome-devTools)
+  * [Known bugs](#known-bugs)
+  * [Solved bugs](#solved-bugs)
 
 * [Credits](#credits)
   * [Code Used](#code-used)
@@ -68,12 +79,61 @@ The project is build using the agile methodology. Link to the project board: [he
 
 I have created user stories based on the agile methodology and I have created them using the Githubs kanban. In the upcoming images the projects build-up process can be followed up throughout different stages.
 
+### Project stages
+
+### Stage 1
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
 ![Stage-1](readme_img/kanban/kanban_1.png)
-![Stage-2](readme_img/kanban/kanban_2.png)
-![Stage-3](readme_img/kanban/kanban_3.png)
-![Stage-4](readme_img/kanban/kanban_4.png)
-![Stage-4](readme_img/kanban/kanban_5.png)
-![Stage-5](readme_img/kanban/kanban_done.png)
+
+</details>
+
+### Stage 2
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
+![Stage-1](readme_img/kanban/kanban_2.png)
+
+</details>
+
+### Stage 3
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
+![Stage-1](readme_img/kanban/kanban_3.png)
+
+</details>
+
+### Stage 4
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
+![Stage-1](readme_img/kanban/kanban_4.png)
+
+</details>
+
+### Stage 5
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
+![Stage-1](readme_img/kanban/kanban_5.png)
+
+</details>
+
+### Last stage - done
+
+<details>
+<summary>Click here to see the progress in KanBan:</summary>
+
+![Stage-1](readme_img/kanban/kanban_done.png)
+
+</details>
 
 <hr>
 
@@ -289,58 +349,153 @@ After I have applied the bootstrap CND I really liked the font style which came 
 My website includes the base.html and the rest of the pages are build using templating. 
 
 ### Final look of the Home page
+
+<details>
+<summary>Click here!</summary>
+
 ![Home Page](readme_img/features/home_1.png)
 ![Home Page](readme_img/features/home_2.png)
 
+</details>
+
 ### Final look of the About page
+
+<details>
+<summary>Click here!</summary>
+
 ![About Page](readme_img/features/about.png)
 
+</details>
+
 ### Final look of the Menu page
+
+<details>
+<summary>Click here!</summary>
+
 ![Menu Page](readme_img/features/menu_1.png)
 ![Menu Page](readme_img/features/menu_2.png)
 ![Menu Page](readme_img/features/menu_3.png)
 
+</details>
+
 ### Final look of the Meal detail page
+
+<details>
+<summary>Click here!</summary>
+
 ![Meal Page](readme_img/features/meal_details.png)
 
+</details>
+
 ### Final look of the Booking form page
+
+<details>
+<summary>Click here!</summary>
+
 ![Form Page](readme_img/features/booking_form.png)
 
+</details>
+
 ### Final look of the Booking confirmation page
+
+<details>
+<summary>Click here!</summary>
+
 ![Confirmation Page](readme_img/features/booking_confirmation.png)
 
+</details>
+
 ### Final look of the Contacts page
+
+<details>
+<summary>Click here!</summary>
+
 ![Contacts Page](readme_img/features/contacts.png)
 
+</details>
+
 ### Final look of the Bookings list page
+
+<details>
+<summary>Click here!</summary>
+
 ![Bookings Page](readme_img/features/bookings_list.png)
 
+</details>
+
 ### Final look of the Edit booking page
+
+<details>
+<summary>Click here!</summary>
+
 ![Edit Page](readme_img/features/edit_booking.png)
 
+</details>
+
 ### Final look of the Delete booking page
+
+<details>
+<summary>Click here!</summary>
+
 ![Delete Page](readme_img/features/delete_booking.png)
 
+</details>
+
 ### Final look of the Sign in page
+
+<details>
+<summary>Click here!</summary>
+
 ![Sign in Page](readme_img/features/sign_in.png)
 
+</details>
+
 ### Final look of the Sign out page
+
+<details>
+<summary>Click here!</summary>
+
 ![Sign out Page](readme_img/features/sign_out.png)
 
+</details>
+
 ### Final look of the Sign up page
+
+<details>
+<summary>Click here!</summary>
+
 ![Sign up Page](readme_img/features/sign_up.png)
 
+</details>
+
 ### Final look of the Error pages
+
+<details>
+<summary>Click here!</summary>
+
 ![Error 404 Page](readme_img/features/error_404.png)
 ![Error 500 Page](readme_img/features/error_500.png)
 
+</details>
+
 ### Footer
+
+<details>
+<summary>Click here!</summary>
+
 ![Footer](readme_img/features/footer.png)
 
+</details>
+
 ### Success messages
+
+<details>
+<summary>Click here!</summary>
+
 ![Booking success messages](readme_img/success_message/booking_success_message.png)
 ![Sign in success messages](readme_img/success_message/sign_in_success_message.png)
 
+</details>
 
 ### General features on each page
 
@@ -512,32 +667,13 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
-## Testing
-
-All the links in the navigation bar and in the footer has been tested and works. The logo link always brings us back to the main page,
-
-while the About and Contact links are only index.html local links so avoid scrolling up and down on the page. The rest as Gallery and Sign Up links opens a new tab in the browser for easier navigation between pages. And the deployed website has been tested in Chrome, Safari, Internet Explorer (Opera) and Firefox. Media queries looks good and been tested throughout different screen sizes.
-
 <hr>
 
-<ul>Manual Testing:
-<li>Booking data model tested: all of its CRUD functionality for the admin and users</li>
-<li>Tested confirm bookings by admin.</li>
-<li>Menu data model tested: create and read functionality for admin, and only view for users</li>
-<li>Announcements data model: tested create and read functionality for the admin and only view for users</li>
-<li>Sign-up/ Sign-in forms and links all tested to confirm working as intended</li>
-<li>Tested Booking page links and all its functionality</li>
-<li>Tested User Authorisations to ensure role-based functions such as Booking page access, edit or deleting bookings</li>
-</ul>
+## Testing
 
-Browser Compatibility:
+All the links in the navigation bar and in the footer has been tested and works. The logo link always brings us back to the main page. Menu located on the 'home' page has different tabs for all the categories and when clicked, the menu items related to that category will be displayed to the user. Menu located on the 'menu' page has the categories listed in the top of the menu and when clicked the link will take you to the chosen category just further down the page.
 
-Browser | Pass/Fail 
- --- | --- | ---
-Google Chrome | Pass
-Safari | Pass
-Microsoft Edge | Pass
-Firefox | Pass
+The navigation between the pages/apps is very simple and pretty straightforward. And the deployed website has been tested in Chrome, Safari, Internet Explorer (Opera) and Firefox. Media queries looks good and been tested throughout different screen sizes.
 
 ### Responsiveness
 
@@ -546,9 +682,35 @@ I used both of these to check the responsivness across different screen sizes.
 - [Am I Responsive?](http://ami.responsivedesign.is/#) 
 - [Responsinator](http://www.responsinator.com/)
 
+### Manual Testing
+
+<ul>
+<li>Booking data model tested and the whole circle of the CRUD functionality works for both users and the admin.</li>
+<li>Accept or reject bookings by admin in the admin panel tested. It works and the status can be monitored from the frontend.</li>
+<li>Menu data model tested: admin can use the whole circle of CRUD functionality from the backend, while the user only view the menu.</li>
+<li>Sign-up/ Sign-in/ Sign-out links all tested and works.</li>
+<li>Booking form tested and all its functionality and validations works.</li>
+<li>Authorisations tested based on the different accesses so that role-based functions such as Booking form access, edit or deleting bookings can be accessed just if the person is permitted.</li>
+</ul>
+
+### Browser Compatibility:
+
+Browser | Pass/Fail 
+ --- | ---
+Google Chrome | Pass
+Safari | Pass
+Microsoft Edge | Pass
+Firefox | Pass
+
+<hr>
+
 ## Lighthouse
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to check the quality of website pages accross mobile and desktop view. 
 
 ### Lighthouse Mobile Views
+
+<details>
+<summary>Click here to see the lighthouse for mobile views:</summary>
 
 ![Lighthouse](readme_img/lighthouse/lighthouse_mobile_home.png)
 ![Lighthouse](readme_img/lighthouse/lighthouse_about_mobile.png)
@@ -565,7 +727,12 @@ I used both of these to check the responsivness across different screen sizes.
 ![Lighthouse](readme_img/lighthouse/lighthouse_sign_up_mobile.png)
 ![Lighthouse](readme_img/lighthouse/lighthouse_sign_in_mobile.png)
 
+</details>
+
 ### Lighthouse Desktop Views
+
+<details>
+<summary>Click here to see the lighthouse for desktop views:</summary>
 
 ![Lighthouse](readme_img/lighthouse/lighthouse_desktop_home.png)
 ![Lighthouse](readme_img/lighthouse/lighthouse_about_desktop.png)
@@ -581,27 +748,21 @@ I used both of these to check the responsivness across different screen sizes.
 ![Lighthouse](readme_img/lighthouse/lighthouse_sign_up_desktop.png)
 ![Lighthouse](readme_img/lighthouse/lighthouse_sign_in_desktop.png)
 
+</details>
 
 ### W3C HTML Validator
-![W3C HTML Validator](assets/readme/w3c-markup-validation.png)
+- [W3C Markup Validation Serice](https://validator.w3.org/) was used to validate HTML code.
+![W3C HTML Validator](readme_img/css_w3c_validatio.png)
 
-### W3C CSS Validator
-![W3C CSS Validator](assets/readme/w3c-css-validation.png)
-
-### W3C CSS Validator
-No errors were recieved on the pages. <br>
-<img src="markdown/css.png" width="400">
-
-### W3C Markup Validation Serice
-No errors were recieved on the pages except for the post detail page which recieved one error.
-|Error |Error explanation| Code |
-| ------------- | ------------- |------------- |
-| <img src="markdown/error.png" width="400"> | <img src="markdown/errorexplain.png" width="400"> |<img src="markdown/errorcode.png" width="400">|
+### JIGSAW W3C CSS Validator
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS code.
+![W3C CSS Validator- JIGSAW](readme_img/css_w3c_validation.png)
 
 ### JShint
 I did not perform any validation on javascript as all the javascript was imported in from [clean blog](https://github.com/StartBootstrap/startbootstrap-clean-blog).
 
 ### Code Institute Python Linter
+- [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate Python code.
 
 - bawarchikhana/settings.py <br>
 <img src="markdown/bawarchikhana-settings-py.png" width="250">
@@ -615,19 +776,14 @@ I did not perform any validation on javascript as all the javascript was importe
 - blog/urls.py. <br>
 <img src="markdown/blog-urls.png" width="250">
 
-## Testing
-- [W3C Markup Validation Serice](https://validator.w3.org/) was used to test for error codes in the HTML.
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)  was used to test for error codes in the CSS.
-- [CI Python Linter](https://pep8ci.herokuapp.com/) was used to detect errors and potential problems in Python code.
+### Chrome DevTools
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-    was used during the development process to test, debug, explore and modify HTML elements, and to test responsiveness in different screen sizes.
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used for improving the quality of web page. It has audits for performance, accessibility, progressive web apps, SEO, and more.
+    played a big role in projects development. I used it for testing, debugging. Further more for exploring around and helping myself to fix HTML and CSS difficulties with it. It help me a lot with setting the responsiveness accross different screen sizes.
 
 ### Known bugs
 
-No known bugs detected
-
-- The navigation bar continues to move around the screen even with it being set to absolute. I have been unable to solve the issue. 
+- On some pages there I don't have enough content the footer does not stick to the bottom and I wasn't able to figure out the fix for that.
+- Other than that not aware of any other bug. 
 
 ### Solved Bugs
 
@@ -638,25 +794,6 @@ Some of the bugs I came accross and fixed:
   + Expected behaviour: Full image with no missing sides all the time covering its own content
   + Actual behaviour: The image was too small or too big or missing a part of it
   + Fix: Add code background-size: 100%; or background-size: cover; plus adjusting the media queries
-
-  + Quotation
-  + Description: Wrong positioning on the logo image and throughtout different screens changing its place
-  + Expected behaviour: To not disturb nor overflow the logo image
-  + Actual behaviour: Running over the logo image and due to color choice text can't be read
-  + Fix: Adjusting the media queries to different screen sizes
-
-+ Footer
-  + Description: Footer wrongly positioned on the small screen
-  + Expected behaviour: Footer at all times should be horizontal
-  + Actual behaviour: Footer vertical positioning on small screen
-  + Fix: Adding the correct class attribute col-s-4.
-
-  ### Solved Bugs
-- When adding success messages I found that there was a bug on the DeletePost view.
-- With this view I had to add different code than the others to correct it.
-- I corrected this by adding this code from [stack overflow](https://stackoverflow.com/questions/48777015/djangos-successmessagemixin-not-working-with-deleteview)
-
-<img src="markdown/DeleteBug.png">
 
 <hr>
 
